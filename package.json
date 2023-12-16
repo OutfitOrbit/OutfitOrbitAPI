@@ -4,7 +4,7 @@
     "description": "A simple setup of Swagger UI with Webpack",
     "scripts": {
       "build": "webpack",
-      "start": "webpack-dev-server --open"
+      "start": "swagger-merger -i ./src/app.yaml -o ./src/swagger.yaml && webpack-dev-server --open"
     },
     "author": "Shaun Luttin",
     "license": "Apache-2.0",
@@ -18,9 +18,10 @@
     },
     "dependencies": {
       "css-loader": "^6.7.1",
+      "yaml-loader": "^0.8.0",
       "json-loader": "^0.5.7",
       "style-loader": "^3.3.1",
       "swagger-ui": "^4.14.0",
-      "yaml-loader": "^0.8.0"
+      "swagger-merger": "^1.5.4"
     }
   }

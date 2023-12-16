@@ -1,8 +1,8 @@
+#!/usr/bin/env node
 import SwaggerUI from 'swagger-ui'
 import 'swagger-ui/dist/swagger-ui.css';
 
-const spec = require('./app.yaml');
-
+const spec = require('./swagger.yaml');
 const ui = SwaggerUI({
   spec,
   dom_id: '#swagger',

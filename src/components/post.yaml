@@ -1,0 +1,51 @@
+type: object
+properties:
+  id: 
+    type: string
+  post_type: 
+    type: string
+    enum: 
+      - pic
+      - vid
+  thumbnail: 
+    type: string
+  poster_id: 
+    type: string
+  title: 
+    type: string
+  text: 
+    type: string
+  time: 
+    type: string
+  media: 
+    oneOf:
+      - type: string
+      - type: array
+        items: 
+          type: object
+          properties:
+            url: 
+              type: string
+            tags: 
+              type: array
+              items: 
+                type: object
+                properties: 
+                  name: 
+                    type: string
+                  pos_x: 
+                    type: integer
+                  pos_y: 
+                    type: integer
+  like_num: 
+    type: integer
+  comment_num: 
+    type: integer
+  save_num: 
+    type: integer
+  comments: 
+    $ref: './comments.yaml'
+  # products:
+  #   $ref: './products.yaml'
+  
+

@@ -1,0 +1,23 @@
+type: object
+properties: 
+  id: 
+    type: string
+  poster_id: 
+    type: string
+  time: 
+    type: string
+  content: 
+    type: string
+  like_num: 
+    type: integer
+  responses: 
+    type: array
+    items:
+      $ref: './comments.yaml'
+example:
+  id: foo
+  poster_id: foo
+  time: foo
+  content: foo
+  like_num: 0
+  responses: []

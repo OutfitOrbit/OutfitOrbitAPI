@@ -1,0 +1,9 @@
+type: object
+properties:
+  product_variant:
+    $ref: './product_variant.yaml'
+  count: 
+    type: integer
+
+  
+  

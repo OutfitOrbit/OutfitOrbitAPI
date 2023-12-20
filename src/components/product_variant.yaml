@@ -10,13 +10,16 @@ properties:
     type: string
   option_names:
     type: array
-    items: string
+    items: 
+      type: string
   option_values:
     type: array
-    items: string
+    items: 
+      type: string
   option_choices:
     type: array
-    items: integer
+    items: 
+      type: integer
   price:
     type: string
   stock:

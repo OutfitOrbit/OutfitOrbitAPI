@@ -10,10 +10,9 @@ properties:
     type: array
     items: string
   options:
-    type: object
+    type: array
+    items: object
     properties:
-      id: 
-        type: string
       name: 
         type: string
       values: 

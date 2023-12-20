@@ -2,7 +2,11 @@ type: object
 properties: 
   id: 
     type: string
-  poster_id: 
+  user_id: 
+    type: string
+  user_name:
+    type: string
+  avatar:
     type: string
   time: 
     type: string
@@ -16,7 +20,8 @@ properties:
       $ref: './comments.yaml'
 example:
   id: foo
-  poster_id: foo
+  user_id: foo
+  user_name: foo
   time: foo
   content: foo
   like_num: 0

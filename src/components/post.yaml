@@ -9,7 +9,11 @@ properties:
       - vid
   thumbnail: 
     type: string
-  poster_id: 
+  user_id: 
+    type: string
+  user_name:
+    type: string
+  avatar:
     type: string
   title: 
     type: string
@@ -45,7 +49,7 @@ properties:
     type: integer
   comments: 
     $ref: './comments.yaml'
-  # products:
-  #   $ref: './products.yaml'
+  products:
+    $ref: './product_variants.yaml'
   
 

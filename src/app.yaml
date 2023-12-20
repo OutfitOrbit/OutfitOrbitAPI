@@ -78,7 +78,7 @@ paths:
         200:
           description: "OK"
   /home/recommended:
-    $ref: './home.yaml#/paths/~1recommended'
+    $ref: './homePage.yaml#/paths/~1recommended'
   /home/hot:
-    $ref: './home.yaml#/paths/~1hot'
+    $ref: './homePage.yaml#/paths/~1hot'
     

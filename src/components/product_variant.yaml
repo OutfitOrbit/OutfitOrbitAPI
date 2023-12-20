@@ -1,0 +1,24 @@
+type: object
+properties:
+  id: 
+    type: string
+  product_id:
+    type: string
+  product_title:
+    type: string
+  option_names:
+    type: array
+    items: string
+  option_values:
+    type: array
+    items: string
+  option_value_indices:
+    type: array
+    items: integer
+  price:
+    type: string
+  stock:
+    type: integer
+  thumbnail: 
+    type: string
+  

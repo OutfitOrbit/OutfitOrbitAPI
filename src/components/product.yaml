@@ -1,0 +1,26 @@
+type: object
+properties:
+  id: 
+    type: string
+  title:
+    type: string
+  thumbnail: 
+    type: string
+  media:
+    type: array
+    items: string
+  options:
+    type: object
+    properties:
+      id: 
+        type: string
+      name: 
+        type: string
+      values: 
+        type: array
+        item: string
+  sizing_guide: 
+    type: string
+  details:
+    type: string
+  

@@ -29,7 +29,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: './components/listOfPosts.yaml'
+                $ref: './components/postTiles.yaml'
   /hot:
     get:
       summary: "Get a sorted list of hot posts"

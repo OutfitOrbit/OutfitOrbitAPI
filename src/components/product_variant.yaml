@@ -6,19 +6,20 @@ properties:
     type: string
   product_title:
     type: string
+  thumbnail: 
+    type: string
   option_names:
     type: array
     items: string
   option_values:
     type: array
     items: string
-  option_value_indices:
+  option_choices:
     type: array
     items: integer
   price:
     type: string
   stock:
     type: integer
-  thumbnail: 
-    type: string
+  
   

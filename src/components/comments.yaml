@@ -10,7 +10,7 @@ properties:
     type: string
   time: 
     type: string
-  content: 
+  text: 
     type: string
   like_num: 
     type: integer
@@ -23,6 +23,6 @@ example:
   user_id: foo
   user_name: foo
   time: foo
-  content: foo
+  text: foo
   like_num: 0
   responses: []

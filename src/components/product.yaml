@@ -8,18 +8,24 @@ properties:
     type: string
   media:
     type: array
-    items: string
+    items: 
+      type: string
   options:
     type: array
-    items: object
-    properties:
-      name: 
-        type: string
-      values: 
-        type: array
-        item: string
+    items: 
+      type: object
+      properties:
+        name: 
+          type: string
+        values: 
+          type: array
+          item: string
   sizing_guide: 
     type: string
+  related_posts:
+    type: array
+    items: 
+      $ref: './postTile.yaml'
   details:
     type: string
   

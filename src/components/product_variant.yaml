@@ -2,24 +2,8 @@ type: object
 properties:
   id: 
     type: string
-  product_id:
-    type: string
-  product_title:
-    type: string
   thumbnail: 
     type: string
-  option_names:
-    type: array
-    items: 
-      type: string
-  option_values:
-    type: array
-    items: 
-      type: string
-  option_choices:
-    type: array
-    items: 
-      type: integer
   price:
     type: string
   stock:

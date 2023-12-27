@@ -85,4 +85,7 @@ paths:
     $ref: './cart.yaml#/paths/~1cart'
   /cart/add:
     $ref: './cart.yaml#/paths/~1cart~1add'
-    
+  /product/{id}:
+    $ref: './productPage.yaml#/paths/~1product~1{id}'
+  /product/{id}/general:
+    $ref: './productPage.yaml#/paths/~1product~1{id}~1general'

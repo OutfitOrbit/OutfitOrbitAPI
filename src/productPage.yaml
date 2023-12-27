@@ -1,0 +1,42 @@
+openapi: "3.0.0"
+info:
+  version: "0.0.1"
+  title: "Outfit Orbit API documentation for Home page"
+  description: "Outfit Orbit API documentation using OpenAPI and Swagger UI"
+paths:
+  /product/{id}/general:
+    get:
+      summary: "Get the general information of a product"
+      parameters:
+        - in: path
+          required: true
+          name: id
+          schema: 
+            type: string
+      responses:
+        200:
+          description: "OK"
+          content:
+            application/json:
+              schema:
+                $ref: './components/product.yaml'
+  /product/{id}:
+    get:
+      summary: "Get variant specific information of a product with given option values"
+      parameters:
+        - in: query
+          name: option_values
+
+          schema:
+            type: object
+            additionalProperties:
+              type: string
+          style: form
+          explode: true
+      responses:
+        200:
+          description: "OK"
+          content:
+            application/json:
+              schema:
+                $ref: './components/product_variant.yaml'

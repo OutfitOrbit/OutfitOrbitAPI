@@ -81,6 +81,8 @@ paths:
     $ref: './homePage.yaml#/paths/~1recommended'
   /home/hot:
     $ref: './homePage.yaml#/paths/~1hot'
+  /home/followed:
+    $ref: './homePage.yaml#/paths/~1followed'
   /cart:
     $ref: './cart.yaml#/paths/~1cart'
   /cart/add:

@@ -1,41 +1,43 @@
 type: object
 properties:
-  id: 
+  id:
     type: string
-  post_type: 
+  post_type:
     type: string
-    enum: 
+    enum:
       - pic
       - vid
-  thumbnail: 
+  thumbnail:
     type: string
-  user_id: 
+  user_id:
     type: string
   user_name:
     type: string
   avatar:
     type: string
-  title: 
+  title:
     type: string
-  text: 
+  text:
     type: string
-  time: 
+  time:
     type: string
-  media: 
+  media:
     oneOf:
       - type: string
       - type: array
-        items: 
-          $ref: './taggedPostImage.yaml'
-  like_num: 
+        items:
+          $ref: "./taggedPostImage.yaml"
+  like_num:
     type: integer
-  comment_num: 
+  comment_num:
     type: integer
-  save_num: 
+  save_num:
     type: integer
-  comments: 
-    $ref: './commentNode.yaml'
+  comments:
+    type: array
+    items:
+      $ref: "./commentNode.yaml"
   products:
-    $ref: './productVariant.yaml'
-  
-
+    type: array
+    items:
+      $ref: "./productVariant.yaml"

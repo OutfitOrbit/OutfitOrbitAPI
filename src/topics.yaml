@@ -5,14 +5,14 @@ info:
   description: "Outfit Orbit API documentation using OpenAPI and Swagger UI"
 paths:
   /topics:
-    post: 
+    post:
       summary: "Create a new topic"
       parameters:
         - in: query
           name: topic_name
           schema:
             type: string
-      response:
+      responses:
         200:
           description: "OK"
           content:
@@ -29,16 +29,16 @@ paths:
         - in: path
           required: true
           name: id
-          schema:   
+          schema:
             type: string
-      response: 
+      responses:
         200:
           description: "OK"
           content:
             application/json:
               schema:
                 type: array
-                items: 
+                items:
                   $ref: "./components/postTile.yaml"
     put:
       summary: "Make a new post under this topic id"
@@ -46,7 +46,7 @@ paths:
         - in: path
           required: true
           name: id
-          schema:   
+          schema:
             type: string
       requestBody:
         required: true
@@ -57,4 +57,3 @@ paths:
       responses:
         200:
           description: "OK"
-

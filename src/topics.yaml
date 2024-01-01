@@ -5,7 +5,56 @@ info:
   description: "Outfit Orbit API documentation using OpenAPI and Swagger UI"
 paths:
   /topics:
-    post:
+    post: 
+      summary: "Create a new topic"
+      parameters:
+        - in: query
+          name: topic_name
+          schema:
+            type: string
+      response:
+        200:
+          description: "OK"
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  topic_id:
+                    type: string
   /topics/{id}:
     get:
+      summary: "Get all posts linked under this topic id"
+      parameters:
+        - in: path
+          required: true
+          name: id
+          schema:   
+            type: string
+      response: 
+        200:
+          description: "OK"
+          content:
+            application/json:
+              schema:
+                type: array
+                items: 
+                  $ref: "./components/postTile.yaml"
     put:
+      summary: "Make a new post under this topic id"
+      parameters:
+        - in: path
+          required: true
+          name: id
+          schema:   
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "./components/post.yaml"
+      responses:
+        200:
+          description: "OK"
+

@@ -94,7 +94,7 @@ paths:
   /carts/edit:
     $ref: "./carts.yaml#/paths/~1carts~1edit"
   /products/{id}/general:
-    $ref: "./products.yaml#/paths/~1products~1{id}~1general"
+    $ref: "./products.yaml#/paths/~1products~1{id}"
   /products/{id}/variant:
     $ref: "./products.yaml#/paths/~1products~1{id}~1variant"
   /topics:

@@ -25,35 +25,14 @@ properties:
     oneOf:
       - type: string
       - type: array
-<<<<<<< HEAD
         items:
-          type: object
-          properties:
-            url:
-              type: string
-            tags:
-              type: array
-              items:
-                type: object
-                properties:
-                  name:
-                    type: string
-                  pos_x:
-                    type: integer
-                  pos_y:
-                    type: integer
+          $ref: "./taggedPostImage.yaml"
   like_num:
-=======
-        items: 
-          $ref: './taggedPostImage.yaml'
-  like_num: 
->>>>>>> 9711b745db9474985f9f75b57b8792d26738a0fa
     type: integer
   comment_num:
     type: integer
   save_num:
     type: integer
-<<<<<<< HEAD
   comments:
     type: array
     items:
@@ -62,11 +41,3 @@ properties:
     type: array
     items:
       $ref: "./productVariant.yaml"
-=======
-  comments: 
-    $ref: './commentNode.yaml'
-  products:
-    $ref: './productVariant.yaml'
-  
-
->>>>>>> 9711b745db9474985f9f75b57b8792d26738a0fa

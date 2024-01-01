@@ -17,11 +17,7 @@ properties:
   responses:
     type: array
     items:
-<<<<<<< HEAD
       $ref: "./commentNode.yaml"
-=======
-      $ref: './commentNode.yaml'
->>>>>>> 9711b745db9474985f9f75b57b8792d26738a0fa
 example:
   id: foo
   user_id: foo

@@ -40,7 +40,7 @@ paths:
       responses:
         200:
           description: "OK"
-  /carts/delete/:
+  /carts/delete:
     delete:
       summary: "Delete product variant from a customer's cart"
       requestBody:

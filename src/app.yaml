@@ -97,3 +97,7 @@ paths:
     $ref: "./products.yaml#/paths/~1products~1{id}~1general"
   /products/{id}/variant:
     $ref: "./products.yaml#/paths/~1products~1{id}~1variant"
+  /topics:
+    $ref: "./topics.yaml#/paths/~1topics"
+  /topics/{id}:
+    $ref: "./topics.yaml#/paths/~1topics~1{id}"

@@ -1,0 +1,15 @@
+type: object
+properties:
+  url: 
+    type: string
+  tags: 
+    type: array
+    items: 
+      type: object
+      properties: 
+        name: 
+          type: string
+        pos_x: 
+          type: integer
+        pos_y: 
+          type: integer

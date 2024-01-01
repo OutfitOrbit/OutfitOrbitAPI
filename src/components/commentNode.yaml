@@ -17,7 +17,7 @@ properties:
   responses: 
     type: array
     items:
-      $ref: './comments.yaml'
+      $ref: './commentNode.yaml'
 example:
   id: foo
   user_id: foo

@@ -26,21 +26,7 @@ properties:
       - type: string
       - type: array
         items: 
-          type: object
-          properties:
-            url: 
-              type: string
-            tags: 
-              type: array
-              items: 
-                type: object
-                properties: 
-                  name: 
-                    type: string
-                  pos_x: 
-                    type: integer
-                  pos_y: 
-                    type: integer
+          $ref: './taggedPostImage.yaml'
   like_num: 
     type: integer
   comment_num: 
@@ -48,8 +34,8 @@ properties:
   save_num: 
     type: integer
   comments: 
-    $ref: './comments.yaml'
+    $ref: './commentNode.yaml'
   products:
-    $ref: './product_variants.yaml'
+    $ref: './productVariant.yaml'
   
 

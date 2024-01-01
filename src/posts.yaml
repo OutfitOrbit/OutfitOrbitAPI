@@ -4,19 +4,119 @@ info:
   title: "Outfit Orbit API documentation for Home page"
   description: "Outfit Orbit API documentation using OpenAPI and Swagger UI"
 paths:
-  posts/:
+  /posts:
     post:
-  posts/{id}:
+      summary: "Create a new post"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                post_type: 
+                  type: string
+                  enum: 
+                    - pic
+                    - vid
+                thumbnail: 
+                  type: string
+                user_id: 
+                  type: string
+                title: 
+                  type: string
+                text: 
+                  type: string
+                time: 
+                  type: string
+                media: 
+                  oneOf:
+                    - type: string
+                    - type: array
+                      items: 
+                        $ref: './components/taggedPostImage.yaml'
+                product_ids:
+                  type: array
+                  items:
+                    type: string
+      responses:
+        200:
+          description: "OK"
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  post_id:
+                    type: string
+  /posts/{id}:
     get:
+      summary: "get a post content"
+      parameters:
+        - in: path
+          required: true
+          name: id
+          schema:
+            type: string
+      responses:
+        200:
+          description: "OK"
+          content:
+            application/json:
+              schema:
+                $ref: './components/post.yaml'
     put:
+      summary: "update a post content"
+      parameters:
+        - in: path
+          required: true
+          name: id
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                thumbnail: 
+                  type: string
+                title: 
+                  type: string
+                text: 
+                  type: string
+                time: 
+                  type: string
+                media: 
+                  oneOf:
+                    - type: string
+                    - type: array
+                      items: 
+                        $ref: './components/taggedPostImage.yaml'
+                product_ids:
+                  type: array
+                  items:
+                    type: string
+      responses:
+        200:
+          description: "OK"
     delete:
-  posts/{id}/likes:
-    get:
-    put:
-  posts/{id}/comments:
-    post:
-    get:
-    put:
-  posts/{id}/saves:
-    get:
-    put:
+      summary: "delete a post"
+      parameters:
+        - in: path
+          required: true
+          name: id
+          schema:
+            type: string
+      responses:
+        200:
+          description: "OK"
+  # posts/{id}/likes:
+  #   get:
+  #   put:
+  # posts/{id}/comments:
+  #   post:
+  #   get:
+  #   put:
+  # posts/{id}/saves:
+  #   get:
+  #   put:

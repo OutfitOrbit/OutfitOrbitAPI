@@ -6,16 +6,56 @@ info:
 paths:
   /products:
     post:
-      summary: "Post the general information of a product"
-      parameters:
-        - in: path
-          required: true
-          name: id
-          schema:
-            type: string
+      summary: "Post all information of a product"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                user_id:
+                  type: string
+                title:
+                  type: string
+                media:
+                  type: array
+                  items:
+                    type: string
+                variants:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      option_name:
+                        type: string
+                      option_values:
+                        type: array
+                        items:
+                          type: string
+                      media:
+                        type: array
+                        items:
+                          type: string
+                      price:
+                        type: array
+                        items:
+                          type: string
+                      stock:
+                        type: integer
+                sizing_guide:
+                  type: string
+                details:
+                  type: string
       responses:
         200:
           description: "OK"
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  product_id:
+                    type: string
   /products/{id}:
     get:
       summary: "Get the general information of a product"
@@ -32,7 +72,27 @@ paths:
             application/json:
               schema:
                 $ref: "./components/productGeneral.yaml"
-    put:
+    patch:
+      summary: "Edit the general information of a product"
+      parameters:
+        - in: path
+          required: true
+          name: id
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              allOf:
+                - $ref: "./components/productGeneral.yaml"
+                - type: object
+                  properties:
+                    Segment:
+                      nullable: true
+      responses:
+        200:
+          description: "OK"
     delete:
       summary: "Delete the all information of a product"
       parameters:
@@ -48,6 +108,11 @@ paths:
     get:
       summary: "Get variant specific information of a product with given option values"
       parameters:
+        - in: path
+          required: true
+          name: id
+          schema:
+            type: string
         - in: query
           name: option_values
           schema:
@@ -63,4 +128,32 @@ paths:
             application/json:
               schema:
                 $ref: "./components/productVariant.yaml"
-    put:
+    patch:
+      summary: "Edit the variant specific information of a product with given properties"
+      parameters:
+        - in: path
+          required: true
+          name: id
+          schema:
+            type: string
+        - in: query
+          name: option_values
+          schema:
+            type: object
+            additionalProperties:
+              type: string
+          style: form
+          explode: true
+      requestBody:
+        content:
+          application/json:
+            schema:
+              allOf:
+                - $ref: "./components/productVariant.yaml"
+                - type: object
+                  properties:
+                    Segment:
+                      nullable: true
+      responses:
+        200:
+          description: "OK"

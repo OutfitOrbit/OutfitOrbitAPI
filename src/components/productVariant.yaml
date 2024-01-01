@@ -1,12 +1,12 @@
 type: object
 properties:
-  id: 
+  id:
     type: string
-  thumbnail: 
-    type: string
+  media:
+    type: array
+    items:
+      type: string
   price:
     type: string
   stock:
     type: integer
-  
-  

@@ -1,23 +1,23 @@
 type: object
-properties: 
-  id: 
+properties:
+  id:
     type: string
-  user_id: 
+  user_id:
     type: string
   user_name:
     type: string
   avatar:
     type: string
-  time: 
+  time:
     type: string
-  text: 
+  text:
     type: string
-  like_num: 
+  like_num:
     type: integer
-  responses: 
+  responses:
     type: array
     items:
-      $ref: './comments.yaml'
+      $ref: "./commentNode.yaml"
 example:
   id: foo
   user_id: foo

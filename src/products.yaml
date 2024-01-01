@@ -4,14 +4,26 @@ info:
   title: "Outfit Orbit API documentation for Home page"
   description: "Outfit Orbit API documentation using OpenAPI and Swagger UI"
 paths:
-  /product/{id}/general:
+  /products:
+    post:
+      summary: "Post the general information of a product"
+      parameters:
+        - in: path
+          required: true
+          name: id
+          schema:
+            type: string
+      responses:
+        200:
+          description: "OK"
+  /products/{id}:
     get:
       summary: "Get the general information of a product"
       parameters:
         - in: path
           required: true
           name: id
-          schema: 
+          schema:
             type: string
       responses:
         200:
@@ -19,14 +31,25 @@ paths:
           content:
             application/json:
               schema:
-                $ref: './components/product.yaml'
-  /product/{id}:
+                $ref: "./components/productGeneral.yaml"
+    put:
+    delete:
+      summary: "Delete the all information of a product"
+      parameters:
+        - in: path
+          required: true
+          name: id
+          schema:
+            type: string
+      responses:
+        200:
+          description: "OK"
+  /products/{id}/variant:
     get:
       summary: "Get variant specific information of a product with given option values"
       parameters:
         - in: query
           name: option_values
-
           schema:
             type: object
             additionalProperties:
@@ -39,4 +62,5 @@ paths:
           content:
             application/json:
               schema:
-                $ref: './components/product_variant.yaml'
+                $ref: "./components/productVariant.yaml"
+    put:

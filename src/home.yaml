@@ -3,7 +3,7 @@ info:
   version: "0.0.1"
   title: "Outfit Orbit API documentation for Home page"
   description: "Outfit Orbit API documentation using OpenAPI and Swagger UI"
-paths: 
+paths:
   /recommended:
     get:
       summary: "Get a sorted list of recommended posts"
@@ -17,36 +17,36 @@ paths:
                   type: string
                 scrolled_through_post_id:
                   type: array
-                  items: 
+                  items:
                     type: string
                 locale:
                   type: string
       responses:
-        401:
-          description: "Unauthorized"
         200:
           description: "OK"
           content:
             application/json:
               schema:
-                $ref: './components/postTiles.yaml'
-  /hot:
+                type: array
+                items:
+                  $ref: "./components/postTile.yaml"
+  /popular:
     get:
-      summary: "Get a sorted list of hot posts"
+      summary: "Get a sorted list of popular posts"
       requestBody:
         content:
           application/json:
             schema:
               type: object
       responses:
-        401:
-          description: "Unauthorized"
         200:
           description: "OK"
           content:
             application/json:
               schema:
-                $ref: './components/postTiles.yaml'
+                type: array
+                items:
+                  $ref: "./components/postTile.yaml"
   /followed:
     get:
       summary: "Get a sorted list of followed posts"
@@ -60,16 +60,16 @@ paths:
                   type: string
                 scrolled_through_post_id:
                   type: array
-                  items: 
+                  items:
                     type: string
                 locale:
                   type: string
       responses:
-        401:
-          description: "Unauthorized"
         200:
           description: "OK"
           content:
             application/json:
               schema:
-                $ref: './components/postTiles.yaml'
+                type: array
+                items:
+                  $ref: "./components/postTile.yaml"

@@ -5,19 +5,19 @@ info:
   description: "Outfit Orbit API documentation using OpenAPI and Swagger UI"
 components:
   securitySchemes:
-    oAuthSample:    # <---- arbitrary name
+    oAuthSample: # <---- arbitrary name
       type: oauth2
       description: This API uses OAuth 2 with the implicit grant flow. [More info](https://api.example.com/docs/auth)
       flows:
-        implicit:   # <---- OAuth flow(authorizationCode, implicit, password or clientCredentials)
+        implicit: # <---- OAuth flow(authorizationCode, implicit, password or clientCredentials)
           authorizationUrl: https://api.example.com/oauth2/authorize
           scopes:
             read_pets: read your pets
             write_pets: modify pets in your account
-security: 
-  - oAuthSample: 
-    - write_pets
-    - read_pets
+security:
+  - oAuthSample:
+      - write_pets
+      - read_pets
 paths:
   /login:
     post:
@@ -78,16 +78,22 @@ paths:
         200:
           description: "OK"
   /home/recommended:
-    $ref: './homePage.yaml#/paths/~1recommended'
-  /home/hot:
-    $ref: './homePage.yaml#/paths/~1hot'
+    $ref: "./home.yaml#/paths/~1recommended"
+  /home/popular:
+    $ref: "./home.yaml#/paths/~1popular"
   /home/followed:
-    $ref: './homePage.yaml#/paths/~1followed'
-  /cart:
-    $ref: './cart.yaml#/paths/~1cart'
-  /cart/add:
-    $ref: './cart.yaml#/paths/~1cart~1add'
-  /product/{id}:
-    $ref: './productPage.yaml#/paths/~1product~1{id}'
-  /product/{id}/general:
-    $ref: './productPage.yaml#/paths/~1product~1{id}~1general'
+    $ref: "./home.yaml#/paths/~1followed"
+  /search:
+
+  /carts:
+    $ref: "./carts.yaml#/paths/~1carts"
+  /carts/add:
+    $ref: "./carts.yaml#/paths/~1carts~1add"
+  /carts/delete:
+    $ref: "./carts.yaml#/paths/~1carts~1delete"
+  /carts/edit:
+    $ref: "./carts.yaml#/paths/~1carts~1edit"
+  /products/{id}/general:
+    $ref: "./products.yaml#/paths/~1products~1{id}~1general"
+  /products/{id}/variant:
+    $ref: "./products.yaml#/paths/~1products~1{id}~1variant"

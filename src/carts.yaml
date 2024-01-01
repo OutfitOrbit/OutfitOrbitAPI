@@ -1,0 +1,93 @@
+openapi: "3.0.0"
+info:
+  version: "0.0.1"
+  title: "Outfit Orbit API documentation for Home page"
+  description: "Outfit Orbit API documentation using OpenAPI and Swagger UI"
+paths:
+  /carts:
+    get:
+      summary: "Get the shopping cart for a customer"
+      parameters:
+        - in: query
+          name: customer_id
+          schema:
+            type: string
+      responses:
+        200:
+          description: "OK"
+          content:
+            application/json:
+              schema:
+                $ref: "./components/shoppingCart.yaml"
+    post:
+      summary: "Create a new shopping cart for a customer"
+      parameters:
+        - in: query
+          name: customer_id
+          schema:
+            type: string
+      responses:
+        200:
+          description: "OK"
+    delete:
+
+  /carts/add:
+    put:
+      summary: "Add items to a customer's cart"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                customer_id:
+                  type: string
+                product_id:
+                  type: string
+                variant_id:
+                  type: string
+                count:
+                  type: integer
+      responses:
+        200:
+          description: "OK"
+  /carts/delete:
+    delete:
+      summary: "Delete items from a customer's cart"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                customer_id:
+                  type: string
+                product_id:
+                  type: string
+                variant_id:
+                  type: string
+                count:
+                  type: integer
+      responses:
+        200:
+          description: "OK"
+  /carts/edit:
+    patch:
+      summary: "Delete items from a customer's cart"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                customer_id:
+                  type: string
+                product_id:
+                  type: string
+                variant_id:
+                  type: string
+                count:
+                  type: integer
+      responses:
+        200:
+          description: "OK"

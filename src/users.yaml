@@ -1,0 +1,12 @@
+openapi: "3.0.0"
+info:
+  version: "0.0.1"
+  title: "Outfit Orbit API documentation for Home page"
+  description: "Outfit Orbit API documentation using OpenAPI and Swagger UI"
+paths:
+  /users:
+    post:
+  /users/{id}:
+    get:
+    put:
+    delete:

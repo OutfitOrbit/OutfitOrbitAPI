@@ -110,13 +110,130 @@ paths:
       responses:
         200:
           description: "OK"
-  # posts/{id}/likes:
-  #   get:
-  #   put:
-  # posts/{id}/comments:
-  #   post:
-  #   get:
-  #   put:
-  # posts/{id}/saves:
-  #   get:
-  #   put:
+  /posts/{id}/like:
+    post:
+      summary: "like a post"
+      parameters:
+        - in: path
+          required: true
+          name: id
+          schema:
+            type: string
+      responses:
+        200:
+          description: "OK"
+
+  /posts/{id}/unlike:
+    post:   
+      summary: "unlike a post"
+      parameters:
+        - in: path
+          required: true
+          name: id
+          schema:
+            type: string
+      responses:
+        200:
+          description: "OK"
+
+  /posts/{id}/comments:
+    get:
+      summary: "get a post's comments"
+      parameters:
+        - in: path
+          required: true
+          name: id
+          schema:
+            type: string
+      responses:
+        200:
+          description: "OK"
+          content:
+            application/json:
+              schema:
+                $ref: './components/commentNode.yaml'
+    post:
+      summary: "write a new comment for a post"
+      parameters:
+        - in: path
+          required: true
+          name: id
+          schema:
+            type: string
+        - in: query
+          required: true
+          name: parent_comment_id
+          schema:
+            type: string
+      requestBody: 
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                user_id: 
+                  type: string
+                text: 
+                  type: string
+                time: 
+                  type: string
+      responses:
+        200:
+          description: "OK"
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  comment_id:
+                    type: string
+    put:
+      summary: "update a comment for a post"
+      parameters:
+        - in: path
+          required: true
+          name: id
+          schema:
+            type: string
+        - in: query
+          required: true
+          name: comment_id
+          schema:
+            type: string
+      requestBody: 
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                text: 
+                  type: string
+                time: 
+                  type: string
+      responses:
+        200:
+          description: "OK"
+  /posts/{id}/save:
+    post:
+      summary: "save a post"
+      parameters:
+        - in: path
+          required: true
+          name: id
+          schema:
+            type: string
+      responses:
+        200:
+          description: "OK"
+  /posts/{id}/unsave:
+    post:
+      summary: "unsave a post"
+      parameters:
+        - in: path
+          required: true
+          name: id
+          schema:
+            type: string
+      responses:
+        200:
+          description: "OK"

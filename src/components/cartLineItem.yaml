@@ -1,6 +1,12 @@
 type: object
 properties:
-  product_variant:
-    $ref: "./productVariant.yaml"
+  product_variant_id:
+    type: string
+  product_title:
+    type: string
+  price:
+    type: string
+  thumbnail:
+    type: string
   count:
     type: integer

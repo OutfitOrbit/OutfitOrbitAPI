@@ -83,7 +83,66 @@ paths:
     $ref: "./home.yaml#/paths/~1popular"
   /home/followed:
     $ref: "./home.yaml#/paths/~1followed"
+  /search/history:
+    get:
+      summary: "Get the recent searches made by a user"
+      parameters:
+        - in: query
+          name: user_id
+          schema:
+            type: string
+        - in: query
+          name: count
+          schema:
+            type: integer
+      responses:
+        200:
+          description: "OK"
+          content:
+            application/json:
+              schema:
+                type: array
+                items: 
+                  type: string
+
+
+  /search/hot:
+    get:
+      summary: "Get the recent hot searches"
+      responses:
+        200:
+          description: "OK"
+          content:
+            application/json:
+              schema:
+                type: array
+                items: 
+                  type: string
+
   /search:
+    get:
+      summary: "search posts / users / products"
+      parameters:
+        - in: query
+          name: user_id
+          schema:
+            type: string
+      responses:
+        200:
+          description: "OK"
+          content:
+            application/json:
+              schema:
+                oneOf:
+                  - type: array
+                    items:
+                      $ref: "./components/postTile.yaml"
+                  # - type: array
+                    # items:
+                      # $ref: "./components/user.yaml"
+                  - type: array
+                    items:
+                      $ref: "./components/productGeneral.yaml"
 
   /carts:
     $ref: "./carts.yaml#/paths/~1carts"

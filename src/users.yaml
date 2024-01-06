@@ -6,7 +6,131 @@ info:
 paths:
   /users:
     post:
+      summary: "Create a new user account"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "./components/user.yaml"
+      responses:
+        200:
+          description: "OK"
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  user_id:
+                    type: string
+
   /users/{id}:
     get:
-    put:
+      summary: "Get all information about the user"
+      parameters:
+        - in: path
+          required: true
+          name: id 
+          schema: 
+            type: string
+      responses:
+        200:
+          description: "OK"
+          content:
+            application/json:
+              schema: 
+                $ref: "./components/user.yaml"
+    patch:
+      summary: "Edit user's information"
+      parameters:
+        - in: path
+          required: true
+          name: id 
+          schema: 
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              allOf:
+                - $ref: "./components/productGeneral.yaml"
+                - type: object
+                  properties:
+                    Segment:
+                      nullable: true
+      responses:
+        200:
+          description: "OK"
     delete:
+      summary: "Delete all information related to the user"
+      parameters:
+        - in: path
+          required: true
+          name: id 
+          schema: 
+            type: string
+      responses:
+        200:
+          description: "OK"
+
+  /users/{id}/posts:
+    get: 
+      summary: "Get all posts created by the user"
+      parameters:
+        - in: path
+          required: true
+          name: id 
+          schema: 
+            type: string
+      responses:
+        200:
+          description: "OK"
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  posts:
+                    type: array
+                    $ref: './components/post.yaml'
+
+  /users/{id}/liked:
+    get:
+      summary: "Get all posts liked by the user"
+      parameters:
+        - in: path
+          required: true
+          name: id 
+          schema: 
+            type: string
+      responses:
+        200:
+          description: "OK"
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  posts:
+                    type: array
+                    $ref: './components/post.yaml'
+
+  /users/{id}/products:
+    get:
+      summary: "Get all products owned by the user"
+      parameters:
+        - in: path
+          required: true
+          name: id 
+          schema: 
+            type: string
+      responses:
+        200:
+          description: "OK"
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  products:
+                    type: array
+                    $ref: "./components/productGeneral.yaml"

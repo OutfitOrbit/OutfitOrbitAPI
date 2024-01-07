@@ -124,7 +124,7 @@ paths:
       summary: "search posts / users / products"
       parameters:
         - in: query
-          name: user_id
+          name: search-text
           schema:
             type: string
       responses:
@@ -137,9 +137,9 @@ paths:
                   - type: array
                     items:
                       $ref: "./components/postTile.yaml"
-                  # - type: array
-                    # items:
-                      # $ref: "./components/user.yaml"
+                  - type: array
+                    items:
+                      $ref: "./components/user.yaml"
                   - type: array
                     items:
                       $ref: "./components/productGeneral.yaml"

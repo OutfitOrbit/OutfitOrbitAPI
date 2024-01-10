@@ -7,8 +7,6 @@ properties:
     enum:
       - pic
       - vid
-  thumbnail:
-    type: string
   user_id:
     type: string
   user_name:

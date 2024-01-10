@@ -26,9 +26,13 @@ paths:
                   items:
                     type: object
                     properties:
-                      option_name:
-                        type: string
-                      option_values:
+                      # option_name:
+                      #   type: string
+                      # option_values:
+                      #   type: array
+                      #   items:
+                      #     type: string
+                      options:
                         type: array
                         items:
                           type: string

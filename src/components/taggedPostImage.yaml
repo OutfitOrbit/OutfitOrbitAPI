@@ -1,15 +1,17 @@
 type: object
 properties:
-  url: 
+  media:
     type: string
-  tags: 
+  tags:
     type: array
-    items: 
+    items:
       type: object
-      properties: 
-        name: 
+      properties:
+        name:
           type: string
-        pos_x: 
+        url:
+          type: string
+        pos_x:
           type: integer
-        pos_y: 
+        pos_y:
           type: integer

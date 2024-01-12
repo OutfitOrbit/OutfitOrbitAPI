@@ -1,9 +1,5 @@
 type: object
 properties:
-  id:
-    type: string
-  product_id:
-    type: string
   media:
     type: array
     items:

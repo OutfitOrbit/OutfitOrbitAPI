@@ -88,12 +88,7 @@ paths:
         content:
           application/json:
             schema:
-              allOf:
-                - $ref: "./components/productGeneral.yaml"
-                - type: object
-                  properties:
-                    Segment:
-                      nullable: true
+              $ref: "./components/productGeneralUpdate.yaml"
       responses:
         200:
           description: "OK"
@@ -152,12 +147,7 @@ paths:
         content:
           application/json:
             schema:
-              allOf:
-                - $ref: "./components/productVariant.yaml"
-                - type: object
-                  properties:
-                    Segment:
-                      nullable: true
+              $ref: "./components/productVariantUpdate.yaml"
       responses:
         200:
           description: "OK"

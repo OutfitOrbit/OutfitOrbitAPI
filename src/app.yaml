@@ -77,12 +77,14 @@ paths:
           description: "Unauthorized"
         200:
           description: "OK"
+
   /home/recommended:
     $ref: "./home.yaml#/paths/~1recommended"
   /home/popular:
     $ref: "./home.yaml#/paths/~1popular"
   /home/followed:
     $ref: "./home.yaml#/paths/~1followed"
+
   /search/history:
     get:
       summary: "Get the recent searches made by a user"
@@ -102,10 +104,8 @@ paths:
             application/json:
               schema:
                 type: array
-                items: 
+                items:
                   type: string
-
-
   /search/hot:
     get:
       summary: "Get the recent hot searches"
@@ -116,9 +116,8 @@ paths:
             application/json:
               schema:
                 type: array
-                items: 
+                items:
                   type: string
-
   /search:
     get:
       summary: "search posts / users / products"
@@ -152,10 +151,12 @@ paths:
     $ref: "./carts.yaml#/paths/~1carts~1delete"
   /carts/edit:
     $ref: "./carts.yaml#/paths/~1carts~1edit"
+
   /products/{id}/general:
     $ref: "./products.yaml#/paths/~1products~1{id}"
   /products/{id}/variant:
     $ref: "./products.yaml#/paths/~1products~1{id}~1variant"
+
   /topics:
     $ref: "./topics.yaml#/paths/~1topics"
   /topics/{id}:

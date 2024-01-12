@@ -59,7 +59,7 @@ paths:
         200:
           description: "OK"
   /carts/edit:
-    patch:
+    put:
       summary: "Edit a product variant's count in a customer's cart"
       requestBody:
         content:

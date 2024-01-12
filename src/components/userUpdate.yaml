@@ -1,7 +1,5 @@
 type: object
 properties:
-  id:
-    type: string
   user_name:
     type: string
   bio:
@@ -23,7 +21,3 @@ properties:
         format: email
       phone:
         type: string
-  billing_address:
-    type: string
-  bank_info:
-    type: string

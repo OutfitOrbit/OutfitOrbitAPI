@@ -29,34 +29,29 @@ paths:
       parameters:
         - in: path
           required: true
-          name: id 
-          schema: 
+          name: id
+          schema:
             type: string
       responses:
         200:
           description: "OK"
           content:
             application/json:
-              schema: 
+              schema:
                 $ref: "./components/user.yaml"
     patch:
       summary: "Edit user's information"
       parameters:
         - in: path
           required: true
-          name: id 
-          schema: 
+          name: id
+          schema:
             type: string
       requestBody:
         content:
           application/json:
             schema:
-              allOf:
-                - $ref: "./components/productGeneral.yaml"
-                - type: object
-                  properties:
-                    Segment:
-                      nullable: true
+              $ref: "./components/userUpdate.yaml"
       responses:
         200:
           description: "OK"
@@ -65,21 +60,21 @@ paths:
       parameters:
         - in: path
           required: true
-          name: id 
-          schema: 
+          name: id
+          schema:
             type: string
       responses:
         200:
           description: "OK"
 
   /users/{id}/posts:
-    get: 
+    get:
       summary: "Get all posts created by the user"
       parameters:
         - in: path
           required: true
-          name: id 
-          schema: 
+          name: id
+          schema:
             type: string
       responses:
         200:
@@ -91,7 +86,7 @@ paths:
                 properties:
                   posts:
                     type: array
-                    $ref: './components/post.yaml'
+                    $ref: "./components/post.yaml"
 
   /users/{id}/liked:
     get:
@@ -99,8 +94,8 @@ paths:
       parameters:
         - in: path
           required: true
-          name: id 
-          schema: 
+          name: id
+          schema:
             type: string
       responses:
         200:
@@ -112,7 +107,7 @@ paths:
                 properties:
                   posts:
                     type: array
-                    $ref: './components/post.yaml'
+                    $ref: "./components/post.yaml"
 
   /users/{id}/products:
     get:
@@ -120,8 +115,8 @@ paths:
       parameters:
         - in: path
           required: true
-          name: id 
-          schema: 
+          name: id
+          schema:
             type: string
       responses:
         200:

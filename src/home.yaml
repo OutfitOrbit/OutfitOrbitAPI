@@ -4,9 +4,9 @@ info:
   title: "Outfit Orbit API documentation for Home page"
   description: "Outfit Orbit API documentation using OpenAPI and Swagger UI"
 paths:
-  /recommended:
+  /explore:
     get:
-      summary: "Get a sorted list of recommended posts"
+      summary: "Get a sorted list of 9 recommended posts"
       requestBody:
         content:
           application/json:
@@ -15,10 +15,6 @@ paths:
               properties:
                 customer_id:
                   type: string
-                scrolled_through_post_id:
-                  type: array
-                  items:
-                    type: string
                 locale:
                   type: string
       responses:
@@ -32,12 +28,15 @@ paths:
                   $ref: "./components/postTile.yaml"
   /popular:
     get:
-      summary: "Get a sorted list of popular posts"
+      summary: "Get a sorted list of 9 popular posts"
       requestBody:
         content:
           application/json:
             schema:
               type: object
+              properties:
+                locale:
+                  type: string
       responses:
         200:
           description: "OK"
@@ -47,9 +46,9 @@ paths:
                 type: array
                 items:
                   $ref: "./components/postTile.yaml"
-  /followed:
+  /follow:
     get:
-      summary: "Get a sorted list of followed posts"
+      summary: "Get a sorted list of 9 followed posts"
       requestBody:
         content:
           application/json:
@@ -57,12 +56,6 @@ paths:
               type: object
               properties:
                 customer_id:
-                  type: string
-                scrolled_through_post_id:
-                  type: array
-                  items:
-                    type: string
-                locale:
                   type: string
       responses:
         200:

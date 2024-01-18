@@ -11,14 +11,13 @@ properties:
   options:
     type: array
     items:
-      type: string
-      # type: object
-      # properties:
-      #   name:
-      #     type: string
-      #   values:
-      #     type: array
-      #     item: string
+      type: object
+      properties:
+        name:
+          type: string
+        values:
+          type: array
+          item: string
   sizing_guide:
     type: string
   related_posts:

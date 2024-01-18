@@ -4,25 +4,6 @@ info:
   title: "Outfit Orbit API documentation for Home page"
   description: "Outfit Orbit API documentation using OpenAPI and Swagger UI"
 paths:
-  /users:
-    post:
-      summary: "Create a new user account"
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: "./components/user.yaml"
-      responses:
-        200:
-          description: "OK"
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  user_id:
-                    type: string
-
   /users/{id}:
     get:
       summary: "Get all information about the user"
@@ -55,8 +36,21 @@ paths:
       responses:
         200:
           description: "OK"
-    delete:
-      summary: "Delete all information related to the user"
+    # delete:
+    #   summary: "Delete all information related to the user"
+    #   parameters:
+    #     - in: path
+    #       required: true
+    #       name: id
+    #       schema:
+    #         type: string
+    #   responses:
+    #     200:
+    #       description: "OK"
+
+  /users/{id}/following-num:
+    get:
+      summary: "Get number of users the user is following"
       parameters:
         - in: path
           required: true
@@ -66,6 +60,93 @@ paths:
       responses:
         200:
           description: "OK"
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  num:
+                    type: number
+  /users/{id}/followers-num:
+    get:
+      summary: "Get number of users following the user"
+      parameters:
+        - in: path
+          required: true
+          name: id
+          schema:
+            type: string
+      responses:
+        200:
+          description: "OK"
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  num:
+                    type: number
+
+  /users/{id}/following:
+    get:
+      summary: "Get number and accounts user is following"
+      parameters:
+        - in: path
+          required: true
+          name: id
+          schema:
+            type: string
+      responses:
+        200:
+          description: "OK"
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  following-acc:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        user_id:
+                          type: string
+                        user_name:
+                          type: string
+                        avatar:
+                          type: string
+                        followers_num:
+                          type: number
+  /users/{id}/followers:
+    get:
+      summary: "Get user's follower number and accounts"
+      parameters:
+        - in: path
+          required: true
+          name: id
+          schema:
+            type: string
+      responses:
+        200:
+          description: "OK"
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  follower-acc:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        user_id:
+                          type: string
+                        user_name:
+                          type: string
+                        avatar:
+                          type: string
+                        followers_num:
+                          type: number
 
   /users/{id}/posts:
     get:
@@ -86,9 +167,28 @@ paths:
                 properties:
                   posts:
                     type: array
-                    $ref: "./components/post.yaml"
-
-  /users/{id}/liked:
+                    $ref: "./components/postTile.yaml"
+  /users/{id}/favorites:
+    get:
+      summary: "Get all favorite posts of the user"
+      parameters:
+        - in: path
+          required: true
+          name: id
+          schema:
+            type: string
+      responses:
+        200:
+          description: "OK"
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  posts:
+                    type: array
+                    $ref: "./components/postTile.yaml"
+  /users/{id}/likes:
     get:
       summary: "Get all posts liked by the user"
       parameters:
@@ -107,7 +207,27 @@ paths:
                 properties:
                   posts:
                     type: array
-                    $ref: "./components/post.yaml"
+                    $ref: "./components/postTile.yaml"
+  /users/{id}/view-history:
+    get:
+      summary: "Get view history of the user"
+      parameters:
+        - in: path
+          required: true
+          name: id
+          schema:
+            type: string
+      responses:
+        200:
+          description: "OK"
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  posts:
+                    type: array
+                    $ref: "./components/postTile.yaml"
 
   /users/{id}/products:
     get:
@@ -128,4 +248,102 @@ paths:
                 properties:
                   products:
                     type: array
-                    $ref: "./components/productGeneral.yaml"
+                    items:
+                      type: object
+                      properties:
+                        product_id:
+                          type: string
+                        thumbnail:
+                          type: string
+                        title:
+                          type: string
+                        price:
+                          type: string
+                        shop_id:
+                          type: string
+
+  /users/{id}/follow-status:
+    get:
+      summary: "Get the following status between the user and the current user"
+      parameters:
+        - in: path
+          required: true
+          name: given_id
+          schema:
+            type: string
+        - in: query
+          required: true
+          name: current_id
+          schema:
+            type: string
+      responses:
+        200:
+          description: "OK"
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: boolean
+    put:
+      summary: "Change the following status between the user and the current user"
+      parameters:
+        - in: path
+          required: true
+          name: given_id
+          schema:
+            type: string
+        - in: query
+          required: true
+          name: current_id
+          schema:
+            type: string
+      responses:
+        200:
+          description: "OK"
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: boolean
+
+  /users/{id}/recently-visited:
+    get:
+      summary: "Get topics recently visited by the user"
+      parameters:
+        - in: path
+          required: true
+          name: id
+          schema:
+            type: string
+      responses:
+        200:
+          description: "OK"
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  posts:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        topic_id:
+                          type: string
+                        topic_name:
+                          type: string
+    delete:
+      summary: "clear recently visited of the user"
+      parameters:
+        - in: path
+          required: true
+          name: id
+          schema:
+            type: string
+      responses:
+        200:
+          description: "OK"

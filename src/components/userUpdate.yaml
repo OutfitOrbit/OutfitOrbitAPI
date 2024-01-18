@@ -13,11 +13,8 @@ properties:
   birthday:
     type: string
     format: date
-  contact_info:
-    type: object
-    properties:
-      email:
-        type: string
-        format: email
-      phone:
-        type: string
+  email:
+    type: string
+    format: email
+  phone:
+    type: string

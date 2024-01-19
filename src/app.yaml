@@ -159,16 +159,12 @@ paths:
     $ref: "./posts.yaml#/paths/~1posts"
   /posts/{id}:
     $ref: "./posts.yaml#/paths/~1posts~1{id}"
-  /posts/{id}/get-like-status:
-    $ref: "./posts.yaml#/paths/~1posts~1{id}~1get-like-status"
-  /posts/{id}/change-like-status:
-    $ref: "./posts.yaml#/paths/~1posts~1{id}~1change-like-status"
+  /posts/{id}/likes:
+    $ref: "./posts.yaml#/paths/~1posts~1{id}~1likes"
   /posts/{id}/comments:
     $ref: "./posts.yaml#/paths/~1posts~1{id}~1comments"
-  /posts/{id}/get-save-status:
-    $ref: "./posts.yaml#/paths/~1posts~1{id}~1get-save-status"
-  /posts/{id}/change-save-status:
-    $ref: "./posts.yaml#/paths/~1posts~1{id}~1change-save-status"
+  /posts/{id}/saves:
+    $ref: "./posts.yaml#/paths/~1posts~1{id}~1saves"
 
   /products:
     $ref: "./products.yaml#/paths/~1products"
@@ -202,7 +198,7 @@ paths:
     $ref: "./users.yaml#/paths/~1users~1{id}~1view-history"
   /users/{id}/products:
     $ref: "./users.yaml#/paths/~1users~1{id}~1products"
-  /users/{id}/follow-status:
-    $ref: "./users.yaml#/paths/~1users~1{id}~1follow-status"
+  /users/{id}/follows:
+    $ref: "./users.yaml#/paths/~1users~1{id}~1follows"
   /users/{id}/recently-visited:
     $ref: "./users.yaml#/paths/~1users~1{id}~1recently-visited"

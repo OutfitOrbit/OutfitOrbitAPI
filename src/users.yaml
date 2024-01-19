@@ -262,7 +262,7 @@ paths:
                         shop_id:
                           type: string
 
-  /users/{id}/follow:
+  /users/{id}/follows:
     get:
       summary: "Get the following status between the user and the current user"
       parameters:
@@ -308,7 +308,7 @@ paths:
       responses:
         200:
           description: "OK"
-          
+
     delete:
       summary: "Make the current user unfollow the given user"
       parameters:

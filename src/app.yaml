@@ -181,3 +181,28 @@ paths:
     $ref: "./topics.yaml#/paths/~1topics"
   /topics/{id}:
     $ref: "./topics.yaml#/paths/~1topics~1{id}"
+
+  /users/{id}:
+    $ref: "./users.yaml#/paths/~1users~1{id}"
+  /users/{id}/following-num:
+    $ref: "./users.yaml#/paths/~1users~1{id}~1following-num"
+  /users/{id}/followers-num:
+    $ref: "./users.yaml#/paths/~1users~1{id}~1followers-num"
+  /users/{id}/following:
+    $ref: "./users.yaml#/paths/~1users~1{id}~1following"
+  /users/{id}/followers:
+    $ref: "./users.yaml#/paths/~1users~1{id}~1followers"
+  /users/{id}/posts:
+    $ref: "./users.yaml#/paths/~1users~1{id}~1posts"
+  /users/{id}/favorites:
+    $ref: "./users.yaml#/paths/~1users~1{id}~1favorites"
+  /users/{id}/likes:
+    $ref: "./users.yaml#/paths/~1users~1{id}~1likes"
+  /users/{id}/view-history:
+    $ref: "./users.yaml#/paths/~1users~1{id}~1view-history"
+  /users/{id}/products:
+    $ref: "./users.yaml#/paths/~1users~1{id}~1products"
+  /users/{id}/follow-status:
+    $ref: "./users.yaml#/paths/~1users~1{id}~1follow-status"
+  /users/{id}/recently-visited:
+    $ref: "./users.yaml#/paths/~1users~1{id}~1recently-visited"

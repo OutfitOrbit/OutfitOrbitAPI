@@ -262,7 +262,7 @@ paths:
                         shop_id:
                           type: string
 
-  /users/{id}/follow-status:
+  /users/{id}/follow:
     get:
       summary: "Get the following status between the user and the current user"
       parameters:
@@ -290,7 +290,7 @@ paths:
                   status:
                     type: boolean
     put:
-      summary: "Change the following status between the user and the current user"
+      summary: "Make the current user follow the given user"
       parameters:
         - in: path
           required: true
@@ -308,13 +308,26 @@ paths:
       responses:
         200:
           description: "OK"
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  status:
-                    type: boolean
+          
+    delete:
+      summary: "Make the current user unfollow the given user"
+      parameters:
+        - in: path
+          required: true
+          name: given-id
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                current_user_id:
+                  type: string
+      responses:
+        200:
+          description: "OK"
 
   /users/{id}/recently-visited:
     get:

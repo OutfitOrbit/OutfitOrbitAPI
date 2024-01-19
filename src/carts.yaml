@@ -7,11 +7,14 @@ paths:
   /carts:
     get:
       summary: "Get the shopping cart for a customer"
-      parameters:
-        - in: query
-          name: user_id
-          schema:
-            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                user_id:
+                  type: string
       responses:
         200:
           description: "OK"

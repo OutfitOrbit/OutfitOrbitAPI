@@ -7,11 +7,14 @@ paths:
   /topics:
     post:
       summary: "Create a new topic"
-      parameters:
-        - in: query
-          name: topic_name
-          schema:
-            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                topic_name:
+                  type: string
       responses:
         200:
           description: "OK"

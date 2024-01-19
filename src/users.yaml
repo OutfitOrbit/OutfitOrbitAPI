@@ -268,14 +268,17 @@ paths:
       parameters:
         - in: path
           required: true
-          name: given_id
+          name: given-user-id
           schema:
             type: string
-        - in: query
-          required: true
-          name: current_id
-          schema:
-            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                current_user_id:
+                  type: string
       responses:
         200:
           description: "OK"
@@ -291,14 +294,17 @@ paths:
       parameters:
         - in: path
           required: true
-          name: given_id
+          name: given-id
           schema:
             type: string
-        - in: query
-          required: true
-          name: current_id
-          schema:
-            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                current_user_id:
+                  type: string
       responses:
         200:
           description: "OK"

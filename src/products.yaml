@@ -109,7 +109,7 @@ paths:
           schema:
             type: string
         - in: query
-          name: option_values
+          name: option-values
           schema:
             type: object
             additionalProperties:
@@ -132,7 +132,7 @@ paths:
           schema:
             type: string
         - in: query
-          name: option_values
+          name: option-values
           schema:
             type: object
             additionalProperties:

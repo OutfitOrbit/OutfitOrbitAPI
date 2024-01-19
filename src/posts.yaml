@@ -13,27 +13,27 @@ paths:
             schema:
               type: object
               properties:
-                post_type: 
+                post_type:
                   type: string
-                  enum: 
+                  enum:
                     - pic
                     - vid
-                thumbnail: 
+                thumbnail:
                   type: string
-                user_id: 
+                user_id:
                   type: string
-                title: 
+                title:
                   type: string
-                text: 
+                text:
                   type: string
-                time: 
+                time:
                   type: string
-                media: 
+                media:
                   oneOf:
                     - type: string
                     - type: array
-                      items: 
-                        $ref: './components/taggedPostImage.yaml'
+                      items:
+                        $ref: "./components/taggedPostImage.yaml"
                 product_ids:
                   type: array
                   items:
@@ -63,7 +63,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: './components/post.yaml'
+                $ref: "./components/post.yaml"
     put:
       summary: "update a post content"
       parameters:
@@ -78,20 +78,20 @@ paths:
             schema:
               type: object
               properties:
-                thumbnail: 
+                thumbnail:
                   type: string
-                title: 
+                title:
                   type: string
-                text: 
+                text:
                   type: string
-                time: 
+                time:
                   type: string
-                media: 
+                media:
                   oneOf:
                     - type: string
                     - type: array
-                      items: 
-                        $ref: './components/taggedPostImage.yaml'
+                      items:
+                        $ref: "./components/taggedPostImage.yaml"
                 product_ids:
                   type: array
                   items:
@@ -110,9 +110,10 @@ paths:
       responses:
         200:
           description: "OK"
-  /posts/{id}/like:
-    post:
-      summary: "like a post"
+
+  /posts/{id}/get-like-status:
+    get:
+      summary: "check whether the user liked the post"
       parameters:
         - in: path
           required: true
@@ -122,10 +123,16 @@ paths:
       responses:
         200:
           description: "OK"
-
-  /posts/{id}/unlike:
-    post:   
-      summary: "unlike a post"
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: boolean
+  /posts/{id}/change-like-status:
+    post:
+      summary: "like or unlike a post"
       parameters:
         - in: path
           required: true
@@ -151,7 +158,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: './components/commentNode.yaml'
+                $ref: "./components/commentNode.yaml"
     post:
       summary: "write a new comment for a post"
       parameters:
@@ -162,20 +169,20 @@ paths:
             type: string
         - in: query
           required: true
-          name: parent_comment_id
+          name: parent-comment-id
           schema:
             type: string
-      requestBody: 
+      requestBody:
         content:
           application/json:
             schema:
               type: object
               properties:
-                user_id: 
+                user_id:
                   type: string
-                text: 
+                text:
                   type: string
-                time: 
+                time:
                   type: string
       responses:
         200:
@@ -197,25 +204,26 @@ paths:
             type: string
         - in: query
           required: true
-          name: comment_id
+          name: comment-id
           schema:
             type: string
-      requestBody: 
+      requestBody:
         content:
           application/json:
             schema:
               type: object
               properties:
-                text: 
+                text:
                   type: string
-                time: 
+                time:
                   type: string
       responses:
         200:
           description: "OK"
-  /posts/{id}/save:
-    post:
-      summary: "save a post"
+
+  /posts/{id}/get-save-status:
+    get:
+      summary: "check whether user saved the post"
       parameters:
         - in: path
           required: true
@@ -225,9 +233,16 @@ paths:
       responses:
         200:
           description: "OK"
-  /posts/{id}/unsave:
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: boolean
+  /posts/{id}/change-save-status:
     post:
-      summary: "unsave a post"
+      summary: "like or unlike a post"
       parameters:
         - in: path
           required: true

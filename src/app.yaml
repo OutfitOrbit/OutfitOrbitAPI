@@ -88,13 +88,9 @@ paths:
       summary: "Get the recent searches made by a user"
       parameters:
         - in: query
-          name: user_id
+          name: user-id
           schema:
             type: string
-        - in: query
-          name: count
-          schema:
-            type: integer
       responses:
         200:
           description: "OK"
@@ -118,12 +114,21 @@ paths:
                   type: string
   /search:
     get:
-      summary: "search posts / users / products"
+      summary: "search posts / topics / products / users"
       parameters:
         - in: query
           name: search-text
           schema:
             type: string
+        - in: query
+          name: search-type
+          schema:
+            type: string
+            enum:
+              - posts
+              - topics
+              - products
+              - users
       responses:
         200:
           description: "OK"
@@ -150,7 +155,24 @@ paths:
   /carts/edit:
     $ref: "./carts.yaml#/paths/~1carts~1edit"
 
-  /products/{id}/general:
+  /posts:
+    $ref: "./posts.yaml#/paths/~1posts"
+  /posts/{id}:
+    $ref: "./posts.yaml#/paths/~1posts~1{id}"
+  /posts/{id}/get-like-status:
+    $ref: "./posts.yaml#/paths/~1posts~1{id}~1get-like-status"
+  /posts/{id}/change-like-status:
+    $ref: "./posts.yaml#/paths/~1posts~1{id}~1change-like-status"
+  /posts/{id}/comments:
+    $ref: "./posts.yaml#/paths/~1posts~1{id}~1comments"
+  /posts/{id}/get-save-status:
+    $ref: "./posts.yaml#/paths/~1posts~1{id}~1get-save-status"
+  /posts/{id}/change-save-status:
+    $ref: "./posts.yaml#/paths/~1posts~1{id}~1change-save-status"
+
+  /products:
+    $ref: "./products.yaml#/paths/~1products"
+  /products/{id}:
     $ref: "./products.yaml#/paths/~1products~1{id}"
   /products/{id}/variant:
     $ref: "./products.yaml#/paths/~1products~1{id}~1variant"

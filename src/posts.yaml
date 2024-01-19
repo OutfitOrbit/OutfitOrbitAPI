@@ -111,13 +111,18 @@ paths:
         200:
           description: "OK"
 
-  /posts/{id}/get-like-status:
+  /posts/{id}/like:
     get:
       summary: "check whether the user liked the post"
       parameters:
         - in: path
           required: true
           name: id
+          schema:
+            type: string
+        - in: query
+          required: true
+          name: user-id
           schema:
             type: string
       responses:
@@ -130,18 +135,39 @@ paths:
                 properties:
                   status:
                     type: boolean
-  /posts/{id}/change-like-status:
-    post:
-      summary: "like or unlike a post"
+    put:
+      summary: "like a post"
       parameters:
         - in: path
           required: true
           name: id
           schema:
+            type: string       
+        - in: query
+          required: true
+          name: user-id
+          schema:
             type: string
       responses:
         200:
           description: "OK"
+    delete:
+      summary: "unlike a post"
+      parameters:
+        - in: path
+          required: true
+          name: id
+          schema:
+            type: string       
+        - in: query
+          required: true
+          name: user-id
+          schema:
+            type: string
+      responses:
+        200:
+          description: "OK"
+    
 
   /posts/{id}/comments:
     get:
@@ -221,13 +247,18 @@ paths:
         200:
           description: "OK"
 
-  /posts/{id}/get-save-status:
+  /posts/{id}/save:
     get:
       summary: "check whether user saved the post"
       parameters:
         - in: path
           required: true
           name: id
+          schema:
+            type: string
+        - in: query
+          required: true
+          name: user-id
           schema:
             type: string
       responses:
@@ -240,13 +271,33 @@ paths:
                 properties:
                   status:
                     type: boolean
-  /posts/{id}/change-save-status:
-    post:
-      summary: "like or unlike a post"
+    put:
+      summary: "save a post"
       parameters:
         - in: path
           required: true
           name: id
+          schema:
+            type: string
+        - in: query
+          required: true
+          name: user-id
+          schema:
+            type: string
+      responses:
+        200:
+          description: "OK"
+    delete:
+      summary: " unsave a post"
+      parameters:
+        - in: path
+          required: true
+          name: id
+          schema:
+            type: string
+        - in: query
+          required: true
+          name: user-id
           schema:
             type: string
       responses:

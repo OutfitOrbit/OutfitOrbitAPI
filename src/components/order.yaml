@@ -1,0 +1,8 @@
+type: object
+properties:
+  id:
+    type: string
+  line_items:
+    type: array
+    items:
+      type: string

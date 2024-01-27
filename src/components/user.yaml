@@ -1,22 +1,27 @@
-type: object
-properties:
-  id:
-    type: string
-  user_name:
-    type: string
-  bio:
-    type: string
-  gender:
-    type: string
-    enum:
-      - Male
-      - Female
-      - Other
-  birthday:
-    type: string
-    format: date
-  email:
-    type: string
-    format: email
-  phone:
-    type: string
+allOf:
+  - $ref: "./userUpdate.yaml"
+  - type: object
+    properties:
+      id:
+        type: string
+      avatar:
+        type: string
+
+  # user_name:
+  #   type: string
+  # bio:
+  #   type: string
+  # gender:
+  #   type: string
+  #   enum:
+  #     - Male
+  #     - Female
+  #     - Other
+  # birthday:
+  #   type: string
+  #   format: date
+  # email:
+  #   type: string
+  #   format: email
+  # phone:
+  #   type: string

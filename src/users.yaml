@@ -259,8 +259,6 @@ paths:
                           type: string
                         price:
                           type: string
-                        shop_id:
-                          type: string
 
   /users/{id}/follows:
     get:

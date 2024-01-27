@@ -1,28 +1,32 @@
-type: object
-properties:
-  id:
-    type: string
-  title:
-    type: string
-  media:
-    type: array
-    items:
-      type: string
-  options:
-    type: array
-    items:
-      type: object
-      properties:
-        name:
-          type: string
-        values:
-          type: array
-          item: string
-  sizing_guide:
-    type: string
-  related_posts:
-    type: array
-    items:
-      $ref: "./postTile.yaml"
-  details:
-    type: string
+allOf:
+  - $ref: "./productGeneralUpdate.yaml"
+  - type: object
+    properties:
+      id:
+        type: string
+      related_posts:
+        type: array
+        items:
+          $ref: "./postTile.yaml"
+
+  # title:
+  #   type: string
+  # media:
+  #   type: array
+  #   items:
+  #     type: string
+  # options:
+  #   type: array
+  #   items:
+  #     type: object
+  #     properties:
+  #       name:
+  #         type: string
+  #       values:
+  #         type: array
+  #         item: string
+  # sizing_guide:
+  #   type: string
+
+  # details:
+  #   type: string

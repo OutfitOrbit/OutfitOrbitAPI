@@ -1,0 +1,8 @@
+type: string
+enum: 
+  - placed
+  - cancelled
+  - shipped
+  - delivered
+  - complete
+  - refunded

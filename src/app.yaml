@@ -202,3 +202,10 @@ paths:
     $ref: "./users.yaml#/paths/~1users~1{id}~1follows"
   /users/{id}/recently-visited:
     $ref: "./users.yaml#/paths/~1users~1{id}~1recently-visited"
+  /orders:
+    $ref: "./orders.yaml#/paths/~1orders"
+  /orders/{id}:
+    $ref: "./orders.yaml#/paths/~1orders~1{id}"
+  /orders/{id}/status:
+    $ref: "./orders.yaml#/paths/~1orders~1{id}~1status"
+

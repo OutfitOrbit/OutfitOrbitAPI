@@ -6,5 +6,68 @@ info:
 paths:
   /orders:
     post:
+      summary: "Create a new order"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                cart_line_items:
+                  type: array
+                  items: 
+                    $ref: './components/cartLineItem.yaml'
+                billing_address:
+                  type: string
+                shipping_address:
+                  type: string
+                shipment_policy:
+                  type: string
+      responses:
+        200:
+          description: "OK"
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  order_id:
+                    type: string
+
+  /orders/{id}:
     get:
+      summary: "get a order detail"
+      parameters:
+        - in: path
+          required: true
+          name: id
+          schema:
+            type: string
+      responses:
+        200:
+          description: "OK"
+          content:
+            application/json:
+              schema:
+                $ref: "./components/order.yaml"
+
+  /orders/{id}/status:
     put:
+      summary: "change an order's status"
+      parameters:
+        - in: path
+          required: true
+          name: id
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                status:
+                  $ref: "./components/orderStatus.yaml"
+      responses:
+        200:
+          description: "OK"

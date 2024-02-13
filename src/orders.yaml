@@ -36,7 +36,7 @@ paths:
 
   /orders/{id}:
     get:
-      summary: "get a order detail"
+      summary: "get an order detail"
       parameters:
         - in: path
           required: true
@@ -50,7 +50,22 @@ paths:
             application/json:
               schema:
                 $ref: "./components/order.yaml"
-
+    patch:
+      summary: "update an order detail"
+      parameters:
+        - in: path
+          required: true
+          name: id
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "./components/order.yaml"
+      response:
+        200:
+          description: "OK"
   /orders/{id}/status:
     put:
       summary: "change an order's status"

@@ -1,0 +1,113 @@
+openapi: "3.0.0"
+info:
+  version: "0.0.1"
+  title: "Outfit Orbit API documentation for Home page"
+  description: "Outfit Orbit API documentation using OpenAPI and Swagger UI"
+paths:
+  /myshop/{id}/orders:
+    get:
+      summary: "get all orders placed from my shop"
+      parameters:
+        - in: path
+          required: true
+          name: id
+          schema:
+            type: string
+      response:
+        200:
+          description: "OK"
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "./components/order.yaml"
+  /myshop/{id}/orders/fulfilled:
+    get:
+      summary: "get all orders placed from my shop that have been fulfilled"
+      parameters:
+        - in: path
+          required: true
+          name: id
+          schema:
+            type: string
+      response:
+        200:
+          description: "OK"
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "./components/order.yaml"
+  /myshop/{id}/orders/unfulfilled:
+    get:
+      summary: "get all orders placed from my shop that have been unfulfilled"
+      parameters:
+        - in: path
+          required: true
+          name: id
+          schema:
+            type: string
+      response:
+        200:
+          description: "OK"
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "./components/order.yaml"
+  /myshop/{id}/orders/return:
+    get:
+      summary: "get all orders placed from my shop that have been returned by customer"
+      parameters:
+        - in: path
+          required: true
+          name: id
+          schema:
+            type: string
+      response:
+        200:
+          description: "OK"
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "./components/return.yaml"
+  /myshop/{id}/products:
+    get: 
+      summary: "get all products my shop is offering"
+      parameters:
+        - in: path
+          required: true
+          name: id
+          schema:
+            type: string
+      response:
+        200:
+          description: "OK"
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "./components/productVariant.yaml"
+  /myshop/{id}/analytics:
+    get:
+      summary: "get the analytics dashboard of my shop"
+      parameters:
+        - in: path
+          required: true
+          name: id
+          schema:
+            type: string
+      response:
+        200:
+          description: "OK"
+          content:
+            application/json:
+              schema:
+                $ref: "./components/analytics.yaml"
+

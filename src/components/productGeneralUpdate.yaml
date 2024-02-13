@@ -20,3 +20,5 @@ properties:
     type: string
   details:
     type: string
+  status:
+    type: boolean

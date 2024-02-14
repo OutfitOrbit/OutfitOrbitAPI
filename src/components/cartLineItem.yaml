@@ -4,6 +4,8 @@ properties:
     type: string
   product_title:
     type: string
+  shop_id:
+    type: string
   price:
     type: string
   thumbnail:

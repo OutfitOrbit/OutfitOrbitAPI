@@ -4,13 +4,13 @@ properties:
     type: string
   line_items:
     type: array
-    items: 
-      $ref: './orderLineItem.yaml'
+    items:
+      $ref: "./orderLineItem.yaml"
   shipping_address:
     type: string
   billing_address:
     type: string
-  raw_price: 
+  raw_price:
     type: number
   shipment_charge:
     type: number
@@ -19,6 +19,6 @@ properties:
   shipment_tracking_number:
     type: string
   tax_details:
-    $ref: './taxDetail.yaml'
+    $ref: "./taxDetail.yaml"
   order_status:
-    $ref: './orderStatus.yaml'
+    $ref: "./orderStatus.yaml"

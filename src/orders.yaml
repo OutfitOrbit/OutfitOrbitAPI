@@ -15,8 +15,8 @@ paths:
               properties:
                 cart_line_items:
                   type: array
-                  items: 
-                    $ref: './components/cartLineItem.yaml'
+                  items:
+                    $ref: "./components/cartLineItem.yaml"
                 billing_address:
                   type: string
                 shipping_address:
@@ -63,7 +63,7 @@ paths:
           application/json:
             schema:
               $ref: "./components/order.yaml"
-      response:
+      responses:
         200:
           description: "OK"
   /orders/{id}/status:

@@ -13,7 +13,7 @@ paths:
           name: id
           schema:
             type: string
-      response:
+      responses:
         200:
           description: "OK"
           content:
@@ -31,7 +31,7 @@ paths:
           name: id
           schema:
             type: string
-      response:
+      responses:
         200:
           description: "OK"
           content:
@@ -49,7 +49,7 @@ paths:
           name: id
           schema:
             type: string
-      response:
+      responses:
         200:
           description: "OK"
           content:
@@ -67,7 +67,7 @@ paths:
           name: id
           schema:
             type: string
-      response:
+      responses:
         200:
           description: "OK"
           content:
@@ -85,7 +85,7 @@ paths:
           name: id
           schema:
             type: string
-      response:
+      responses:
         200:
           description: "OK"
           content:
@@ -103,7 +103,7 @@ paths:
           name: id
           schema:
             type: string
-      response:
+      responses:
         200:
           description: "OK"
           content:

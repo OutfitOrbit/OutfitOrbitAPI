@@ -15,7 +15,7 @@ properties:
           type: string
         values:
           type: array
-          item: string
+          items: string
   sizing_guide:
     type: string
   details:

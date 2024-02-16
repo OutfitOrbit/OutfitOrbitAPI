@@ -208,4 +208,15 @@ paths:
     $ref: "./orders.yaml#/paths/~1orders~1{id}"
   /orders/{id}/status:
     $ref: "./orders.yaml#/paths/~1orders~1{id}~1status"
-
+  /myshop/{id}/orders:
+    $ref: "./shopAdmin.yaml#/paths/~1myshop~1{id}~1orders"
+  /myshop/{id}/orders/fulfilled:
+    $ref: "./shopAdmin.yaml#/paths/~1myshop~1{id}~1orders~1fulfilled"
+  /myshop/{id}/orders/unfulfilled:
+    $ref: "./shopAdmin.yaml#/paths/~1myshop~1{id}~1orders~1unfulfilled"
+  /myshop/{id}/orders/return:
+    $ref: "./shopAdmin.yaml#/paths/~1myshop~1{id}~1orders~1return"
+  /myshop/{id}/product:
+    $ref: "./shopAdmin.yaml#/paths/~1myshop~1{id}~1products"
+  /myshop/{id}/analytics:
+    $ref: "./shopAdmin.yaml#/paths/~1myshop~1{id}~1analytics"

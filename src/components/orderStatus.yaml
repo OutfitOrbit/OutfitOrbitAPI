@@ -6,3 +6,4 @@ enum:
   - delivered
   - complete
   - refunded
+  - returned

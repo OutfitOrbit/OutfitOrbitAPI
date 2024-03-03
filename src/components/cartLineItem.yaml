@@ -2,9 +2,13 @@ type: object
 properties:
   product_variant_id:
     type: string
+  product_variant_name:
+    type: string
   product_title:
     type: string
-  shop_id:
+  merchant_id:
+    type: string
+  merchant_name:
     type: string
   price:
     type: string

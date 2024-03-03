@@ -18,7 +18,9 @@ properties:
     type: string
   shipment_tracking_number:
     type: string
-  tax_details:
+  tax_detail:
     $ref: "./taxDetail.yaml"
   order_status:
     $ref: "./orderStatus.yaml"
+  time:
+    type: string

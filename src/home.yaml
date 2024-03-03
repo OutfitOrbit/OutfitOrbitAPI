@@ -5,7 +5,7 @@ info:
   description: "Outfit Orbit API documentation using OpenAPI and Swagger UI"
 paths:
   /explore:
-    get:
+    post:
       summary: "Get a sorted list of 9 recommended posts"
       requestBody:
         content:
@@ -27,7 +27,7 @@ paths:
                 items:
                   $ref: "./components/postTile.yaml"
   /popular:
-    get:
+    post:
       summary: "Get a segment of sorted list of popular posts"
       requestBody:
         content:
@@ -51,7 +51,7 @@ paths:
                 items:
                   $ref: "./components/postTile.yaml"
   /follow:
-    get:
+    post:
       summary: "Get a segment of sorted list of followed posts"
       requestBody:
         content:

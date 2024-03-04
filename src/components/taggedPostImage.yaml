@@ -12,6 +12,6 @@ properties:
         url:
           type: string
         pos_x:
-          type: integer
+          type: number
         pos_y:
-          type: integer
+          type: number

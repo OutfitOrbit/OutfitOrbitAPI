@@ -9,9 +9,4 @@ properties:
   stock:
     type: integer
   status:
-    type: string
-    enum:
-      - active
-      - inactive
-  warrenty_time:
-    type: number
+    type: boolean

@@ -7,9 +7,9 @@ properties:
     enum:
       - pic
       - vid
-  user_id:
+  author_id:
     type: string
-  user_name:
+  author_name:
     type: string
   avatar:
     type: string

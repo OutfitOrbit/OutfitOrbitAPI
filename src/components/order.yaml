@@ -11,7 +11,7 @@ properties:
   billing_address:
     type: string
   raw_price:
-    type: number
+    type: string
   shipment_charge:
     type: number
   shipment_policy:

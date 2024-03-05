@@ -46,7 +46,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: "./components/return.yaml"
+                $ref: "./components/returnOrder.yaml"
     delete:
       summary: "delete a return"
       parameters:

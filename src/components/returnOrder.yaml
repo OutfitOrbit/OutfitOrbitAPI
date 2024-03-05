@@ -15,7 +15,7 @@ properties:
   product_variant_id:
     type: string
   count:
-    type: number
+    type: integer
   time:
     type: string
   reason:

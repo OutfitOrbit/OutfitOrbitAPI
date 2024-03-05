@@ -75,7 +75,7 @@ paths:
               schema:
                 type: array
                 items:
-                  $ref: "./components/return.yaml"
+                  $ref: "./components/returnOrder.yaml"
   /myshop/{id}/products:
     get:
       summary: "get all products my shop is offering"

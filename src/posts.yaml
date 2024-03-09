@@ -20,7 +20,7 @@ paths:
                     - vid
                 thumbnail:
                   type: string
-                user_id:
+                author_id:
                   type: string
                 title:
                   type: string
@@ -34,7 +34,7 @@ paths:
                     - type: array
                       items:
                         $ref: "./components/taggedPostImage.yaml"
-                product_ids:
+                product_variant_ids:
                   type: array
                   items:
                     type: string

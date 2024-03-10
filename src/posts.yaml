@@ -168,11 +168,16 @@ paths:
 
   /posts/{id}/comments:
     get:
-      summary: "get a post's comments"
+      summary: "get a comment"
       parameters:
         - in: path
           required: true
           name: id
+          schema:
+            type: string
+        - in: query
+          required: true
+          name: comment-id
           schema:
             type: string
       responses:
@@ -205,8 +210,6 @@ paths:
                   type: string
                 text:
                   type: string
-                time:
-                  type: string
       responses:
         200:
           description: "OK"
@@ -237,8 +240,6 @@ paths:
               type: object
               properties:
                 text:
-                  type: string
-                time:
                   type: string
       responses:
         200:

@@ -83,7 +83,7 @@ paths:
                     - type: array
                       items:
                         $ref: "./components/taggedPostImage.yaml"
-                product_ids:
+                product_variant_ids:
                   type: array
                   items:
                     type: string

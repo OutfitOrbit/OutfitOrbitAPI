@@ -13,11 +13,6 @@ paths:
             schema:
               type: object
               properties:
-                post_type:
-                  type: string
-                  enum:
-                    - pic
-                    - vid
                 thumbnail:
                   type: string
                 author_id:
@@ -25,8 +20,6 @@ paths:
                 title:
                   type: string
                 text:
-                  type: string
-                time:
                   type: string
                 media:
                   oneOf:
@@ -84,8 +77,6 @@ paths:
                   type: string
                 text:
                   type: string
-                time:
-                  type: string
                 media:
                   oneOf:
                     - type: string
@@ -99,6 +90,13 @@ paths:
       responses:
         200:
           description: "OK"
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  post_id:
+                    type: string
     delete:
       summary: "delete a post"
       parameters:

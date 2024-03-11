@@ -104,7 +104,7 @@ paths:
               schema:
                 type: object
                 properties:
-                  following-acc:
+                  following_acc:
                     type: array
                     items:
                       type: object
@@ -134,7 +134,7 @@ paths:
               schema:
                 type: object
                 properties:
-                  follower-acc:
+                  follower_acc:
                     type: array
                     items:
                       type: object
@@ -266,17 +266,14 @@ paths:
       parameters:
         - in: path
           required: true
-          name: given-user-id
+          name: id
           schema:
             type: string
-      requestBody:
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                current_user_id:
-                  type: string
+        - in: query
+          required: true
+          name: current_user_id
+          schema:
+            type: string
       responses:
         200:
           description: "OK"
@@ -292,7 +289,7 @@ paths:
       parameters:
         - in: path
           required: true
-          name: given-id
+          name: id
           schema:
             type: string
       requestBody:
@@ -312,7 +309,7 @@ paths:
       parameters:
         - in: path
           required: true
-          name: given-id
+          name: id
           schema:
             type: string
       requestBody:
@@ -344,7 +341,7 @@ paths:
               schema:
                 type: object
                 properties:
-                  posts:
+                  topics:
                     type: array
                     items:
                       type: object

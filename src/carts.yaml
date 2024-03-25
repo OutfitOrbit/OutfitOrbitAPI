@@ -4,17 +4,15 @@ info:
   title: "Outfit Orbit API documentation for Home page"
   description: "Outfit Orbit API documentation using OpenAPI and Swagger UI"
 paths:
-  /carts:
+  /carts/{id}:
     get:
       summary: "Get the shopping cart for a customer"
-      requestBody:
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                user_id:
-                  type: string
+      parameter:
+        - in: path
+          required: true
+          name: id
+          schema:
+            type: string
       responses:
         200:
           description: "OK"
@@ -22,18 +20,42 @@ paths:
             application/json:
               schema:
                 $ref: "./components/shoppingCart.yaml"
-
-  /carts/add:
-    put:
-      summary: "Add items to a customer's cart"
+    delete:
+      summary: "Delete product variant from a customer's cart"
+      parameter:
+        - in: path
+          required: true
+          name: id
+          schema:
+            type: string
       requestBody:
         content:
           application/json:
             schema:
               type: object
               properties:
-                user_id:
+                product_id:
                   type: string
+                variant_id:
+                  type: string
+      responses:
+        200:
+          description: "OK"
+  /carts/{id}/add:
+    put:
+      summary: "Add items to a customer's cart"
+      parameter:
+        - in: path
+          required: true
+          name: id
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
                 product_id:
                   type: string
                 variant_id:
@@ -43,35 +65,21 @@ paths:
       responses:
         200:
           description: "OK"
-  /carts/delete:
-    delete:
-      summary: "Delete product variant from a customer's cart"
-      requestBody:
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                user_id:
-                  type: string
-                product_id:
-                  type: string
-                variant_id:
-                  type: string
-      responses:
-        200:
-          description: "OK"
-  /carts/edit:
+  /carts/{id}/edit:
     put:
       summary: "Edit a product variant's count in a customer's cart"
+      parameter:
+        - in: path
+          required: true
+          name: id
+          schema:
+            type: string
       requestBody:
         content:
           application/json:
             schema:
               type: object
               properties:
-                user_id:
-                  type: string
                 product_id:
                   type: string
                 variant_id:

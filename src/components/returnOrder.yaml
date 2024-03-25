@@ -18,6 +18,7 @@ properties:
     type: integer
   time:
     type: string
+    format: date-time
   reason:
     type: string
   status:

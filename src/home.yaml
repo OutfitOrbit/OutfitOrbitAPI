@@ -17,6 +17,8 @@ paths:
                   type: string
                 locale:
                   type: string
+                count:
+                  type: integer
       responses:
         200:
           description: "OK"
@@ -35,10 +37,10 @@ paths:
             schema:
               type: object
               properties:
+                customer_id:
+                  type: string
                 locale:
                   type: string
-                start:
-                  type: integer
                 count:
                   type: integer
       responses:
@@ -61,8 +63,8 @@ paths:
               properties:
                 customer_id:
                   type: string
-                start:
-                  type: integer
+                locale:
+                  type: string
                 count:
                   type: integer
       responses:

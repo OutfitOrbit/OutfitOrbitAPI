@@ -1,6 +1,0 @@
-type: object
-properties:
-  raw_price_tax_rate: 
-    type: number
-  shipping_tax_rate:
-    type: number

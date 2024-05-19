@@ -1,8 +1,0 @@
-type: string
-enum:
-  - placed
-  - cancelled
-  - shipped
-  - delivered
-  - refunded
-  - returned

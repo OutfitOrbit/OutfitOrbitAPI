@@ -1,165 +1,1753 @@
-openapi: "3.0.0"
+---
+swagger: "2.0"
 info:
-  version: "0.0.1"
-  title: "Outfit Orbit API documentation"
-  description: "Outfit Orbit API documentation using OpenAPI and Swagger UI"
-components:
-  securitySchemes:
-    oAuthSample: # <---- arbitrary name
-      type: oauth2
-      description: This API uses OAuth 2 with the implicit grant flow. [More info](https://api.example.com/docs/auth)
-      flows:
-        implicit: # <---- OAuth flow(authorizationCode, implicit, password or clientCredentials)
-          authorizationUrl: https://api.example.com/oauth2/authorize
-          scopes:
-            read_pets: read your pets
-            write_pets: modify pets in your account
-security:
-  - oAuthSample:
-      - write_pets
-      - read_pets
+  version: "2024-05-19T17:46:47Z"
+  title: "OrionApi"
+host: "outfitorbits.com"
+schemes:
+- "https"
 paths:
-  /home/explore:
-    $ref: "./home.yaml#/paths/~1explore"
-  /home/popular:
-    $ref: "./home.yaml#/paths/~1popular"
-  /home/follow:
-    $ref: "./home.yaml#/paths/~1follow"
-
-  /search/history:
+  /carts/{id}:
     get:
-      summary: "Get the recent searches made by a user"
+      produces:
+      - "application/json"
       parameters:
-        - in: query
-          name: user-id
+      - name: "id"
+        in: "path"
+        required: true
+        type: "string"
+      responses:
+        "200":
+          description: "200 response"
           schema:
-            type: string
+            $ref: "#/definitions/ProjecOrionQTqh0FQ1u7wB"
+      security:
+      - ProjectOrionCdkStackOutfitOrbitAPIAuthorizerF4DB5AD3: []
+    delete:
+      consumes:
+      - "application/json"
+      parameters:
+      - name: "id"
+        in: "path"
+        required: true
+        type: "string"
+      - in: "body"
+        name: "ProjecOrion1ydcEV9zajw3"
+        required: true
+        schema:
+          $ref: "#/definitions/ProjecOrion1ydcEV9zajw3"
       responses:
-        200:
-          description: "OK"
-          content:
-            application/json:
-              schema:
-                type: array
-                items:
-                  type: string
-  /search/hot:
+        "200":
+          description: "200 response"
+      security:
+      - ProjectOrionCdkStackOutfitOrbitAPIAuthorizerF4DB5AD3: []
+  /carts/{id}/add:
+    put:
+      consumes:
+      - "application/json"
+      parameters:
+      - name: "id"
+        in: "path"
+        required: true
+        type: "string"
+      - in: "body"
+        name: "ProjecOrionlXSapW4ZD2bl"
+        required: true
+        schema:
+          $ref: "#/definitions/ProjecOrionlXSapW4ZD2bl"
+      responses:
+        "200":
+          description: "200 response"
+      security:
+      - ProjectOrionCdkStackOutfitOrbitAPIAuthorizerF4DB5AD3: []
+  /carts/{id}/edit:
+    put:
+      consumes:
+      - "application/json"
+      parameters:
+      - name: "id"
+        in: "path"
+        required: true
+        type: "string"
+      - in: "body"
+        name: "ProjecOrionlXSapW4ZD2bl"
+        required: true
+        schema:
+          $ref: "#/definitions/ProjecOrionlXSapW4ZD2bl"
+      responses:
+        "200":
+          description: "200 response"
+      security:
+      - ProjectOrionCdkStackOutfitOrbitAPIAuthorizerF4DB5AD3: []
+  /home/explore:
+    post:
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+      - in: "body"
+        name: "ProjecOrionySM1FOwiLB2H"
+        required: true
+        schema:
+          $ref: "#/definitions/ProjecOrionySM1FOwiLB2H"
+      responses:
+        "200":
+          description: "200 response"
+          schema:
+            $ref: "#/definitions/ProjecOrionf3nIu6yMHd3X"
+      security:
+      - ProjectOrionCdkStackOutfitOrbitAPIAuthorizerF4DB5AD3: []
+  /home/follow:
+    post:
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+      - in: "body"
+        name: "ProjecOrionySM1FOwiLB2H"
+        required: true
+        schema:
+          $ref: "#/definitions/ProjecOrionySM1FOwiLB2H"
+      responses:
+        "200":
+          description: "200 response"
+          schema:
+            $ref: "#/definitions/ProjecOrionf3nIu6yMHd3X"
+      security:
+      - ProjectOrionCdkStackOutfitOrbitAPIAuthorizerF4DB5AD3: []
+  /home/popular:
+    post:
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+      - in: "body"
+        name: "ProjecOrionySM1FOwiLB2H"
+        required: true
+        schema:
+          $ref: "#/definitions/ProjecOrionySM1FOwiLB2H"
+      responses:
+        "200":
+          description: "200 response"
+          schema:
+            $ref: "#/definitions/ProjecOrionf3nIu6yMHd3X"
+      security:
+      - ProjectOrionCdkStackOutfitOrbitAPIAuthorizerF4DB5AD3: []
+  /myshop/{id}/analytics:
     get:
-      summary: "Get the recent hot searches"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "id"
+        in: "path"
+        required: true
+        type: "string"
       responses:
-        200:
-          description: "OK"
-          content:
-            application/json:
-              schema:
-                type: array
-                items:
-                  type: string
+        "200":
+          description: "200 response"
+          schema:
+            $ref: "#/definitions/ProjecOrion0JSCIqSZptS5"
+      security:
+      - ProjectOrionCdkStackOutfitOrbitAPIAuthorizerF4DB5AD3: []
+  /myshop/{id}/orders:
+    get:
+      produces:
+      - "application/json"
+      parameters:
+      - name: "id"
+        in: "path"
+        required: true
+        type: "string"
+      responses:
+        "200":
+          description: "200 response"
+          schema:
+            $ref: "#/definitions/ProjecOrionKTNF2MslNpW1"
+      security:
+      - ProjectOrionCdkStackOutfitOrbitAPIAuthorizerF4DB5AD3: []
+  /myshop/{id}/orders/fulfilled:
+    get:
+      produces:
+      - "application/json"
+      parameters:
+      - name: "id"
+        in: "path"
+        required: true
+        type: "string"
+      responses:
+        "200":
+          description: "200 response"
+          schema:
+            $ref: "#/definitions/ProjecOrionKTNF2MslNpW1"
+      security:
+      - ProjectOrionCdkStackOutfitOrbitAPIAuthorizerF4DB5AD3: []
+  /myshop/{id}/orders/return:
+    get:
+      produces:
+      - "application/json"
+      parameters:
+      - name: "id"
+        in: "path"
+        required: true
+        type: "string"
+      responses:
+        "200":
+          description: "200 response"
+          schema:
+            $ref: "#/definitions/ProjecOrionKTNF2MslNpW1"
+      security:
+      - ProjectOrionCdkStackOutfitOrbitAPIAuthorizerF4DB5AD3: []
+  /myshop/{id}/orders/unfulfilled:
+    get:
+      produces:
+      - "application/json"
+      parameters:
+      - name: "id"
+        in: "path"
+        required: true
+        type: "string"
+      responses:
+        "200":
+          description: "200 response"
+          schema:
+            $ref: "#/definitions/ProjecOrionKTNF2MslNpW1"
+      security:
+      - ProjectOrionCdkStackOutfitOrbitAPIAuthorizerF4DB5AD3: []
+  /myshop/{id}/products:
+    get:
+      produces:
+      - "application/json"
+      parameters:
+      - name: "id"
+        in: "path"
+        required: true
+        type: "string"
+      responses:
+        "200":
+          description: "200 response"
+          schema:
+            $ref: "#/definitions/ProjecOrionkxKb1sE7q3gz"
+      security:
+      - ProjectOrionCdkStackOutfitOrbitAPIAuthorizerF4DB5AD3: []
+  /orders:
+    post:
+      operationId: "createOrder"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+      - in: "body"
+        name: "ProjecOrionRL7yvvEYSzIF"
+        required: true
+        schema:
+          $ref: "#/definitions/ProjecOrionRL7yvvEYSzIF"
+      responses:
+        "200":
+          description: "200 response"
+          schema:
+            $ref: "#/definitions/ProjecOrionRn3fyDmfe8kg"
+      security:
+      - ProjectOrionCdkStackOutfitOrbitAPIAuthorizerF4DB5AD3: []
+  /orders/{id}:
+    get:
+      operationId: "getOrder"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "id"
+        in: "path"
+        required: true
+        type: "string"
+      responses:
+        "200":
+          description: "200 response"
+          schema:
+            $ref: "#/definitions/ProjecOrionUNoREaCnwqw6"
+      security:
+      - ProjectOrionCdkStackOutfitOrbitAPIAuthorizerF4DB5AD3: []
+    patch:
+      operationId: "updateOrder"
+      consumes:
+      - "application/json"
+      parameters:
+      - name: "id"
+        in: "path"
+        required: true
+        type: "string"
+      - in: "body"
+        name: "ProjecOrionUNoREaCnwqw6"
+        required: true
+        schema:
+          $ref: "#/definitions/ProjecOrionUNoREaCnwqw6"
+      responses:
+        "200":
+          description: "200 response"
+      security:
+      - ProjectOrionCdkStackOutfitOrbitAPIAuthorizerF4DB5AD3: []
+  /orders/{id}/status:
+    put:
+      operationId: "changeOrderStatus"
+      consumes:
+      - "application/json"
+      parameters:
+      - name: "id"
+        in: "path"
+        required: true
+        type: "string"
+      - in: "body"
+        name: "ProjecOrionkjVpJjula8BF"
+        required: true
+        schema:
+          $ref: "#/definitions/ProjecOrionkjVpJjula8BF"
+      responses:
+        "200":
+          description: "200 response"
+      security:
+      - ProjectOrionCdkStackOutfitOrbitAPIAuthorizerF4DB5AD3: []
+  /posts:
+    post:
+      operationId: "createPost"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+      - in: "body"
+        name: "ProjecOrion1qNXYAJy1ou9"
+        required: true
+        schema:
+          $ref: "#/definitions/ProjecOrion1qNXYAJy1ou9"
+      responses:
+        "200":
+          description: "200 response"
+          schema:
+            $ref: "#/definitions/ProjecOrionGVCZ95xETAtJ"
+      security:
+      - ProjectOrionCdkStackOutfitOrbitAPIAuthorizerF4DB5AD3: []
+  /posts/{id}:
+    get:
+      operationId: "getPost"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "id"
+        in: "path"
+        required: true
+        type: "string"
+      responses:
+        "200":
+          description: "200 response"
+          schema:
+            $ref: "#/definitions/ProjecOrionkOVPaQykjTGD"
+      security:
+      - ProjectOrionCdkStackOutfitOrbitAPIAuthorizerF4DB5AD3: []
+    put:
+      operationId: "updatePost"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "id"
+        in: "path"
+        required: true
+        type: "string"
+      - in: "body"
+        name: "ProjecOrionl4bHMhoesc0B"
+        required: true
+        schema:
+          $ref: "#/definitions/ProjecOrionl4bHMhoesc0B"
+      responses:
+        "200":
+          description: "200 response"
+          schema:
+            $ref: "#/definitions/ProjecOrionGVCZ95xETAtJ"
+      security:
+      - ProjectOrionCdkStackOutfitOrbitAPIAuthorizerF4DB5AD3: []
+    delete:
+      operationId: "deletePost"
+      parameters:
+      - name: "id"
+        in: "path"
+        required: true
+        type: "string"
+      responses:
+        "200":
+          description: "200 response"
+      security:
+      - ProjectOrionCdkStackOutfitOrbitAPIAuthorizerF4DB5AD3: []
+  /posts/{id}/comments:
+    get:
+      operationId: "getComment"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "comment-id"
+        in: "query"
+        required: true
+        type: "string"
+      - name: "id"
+        in: "path"
+        required: true
+        type: "string"
+      responses:
+        "200":
+          description: "200 response"
+          schema:
+            $ref: "#/definitions/ProjecOrionBX6y35ot4KcV"
+      security:
+      - ProjectOrionCdkStackOutfitOrbitAPIAuthorizerF4DB5AD3: []
+    post:
+      operationId: "createComment"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "id"
+        in: "path"
+        required: true
+        type: "string"
+      - in: "body"
+        name: "ProjecOrion0tXfA8EhFdEA"
+        required: true
+        schema:
+          $ref: "#/definitions/ProjecOrion0tXfA8EhFdEA"
+      responses:
+        "200":
+          description: "200 response"
+          schema:
+            $ref: "#/definitions/ProjecOrionGVCZ95xETAtJ"
+      security:
+      - ProjectOrionCdkStackOutfitOrbitAPIAuthorizerF4DB5AD3: []
+    put:
+      operationId: "updateComment"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "comment-id"
+        in: "query"
+        required: true
+        type: "string"
+      - name: "id"
+        in: "path"
+        required: true
+        type: "string"
+      - in: "body"
+        name: "ProjecOrionvsGe1x7NN7Lc"
+        required: true
+        schema:
+          $ref: "#/definitions/ProjecOrionvsGe1x7NN7Lc"
+      responses:
+        "200":
+          description: "200 response"
+          schema:
+            $ref: "#/definitions/ProjecOrionGVCZ95xETAtJ"
+      security:
+      - ProjectOrionCdkStackOutfitOrbitAPIAuthorizerF4DB5AD3: []
+  /posts/{id}/likes:
+    get:
+      operationId: "getPostLikeStatus"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "user-id"
+        in: "query"
+        required: true
+        type: "string"
+      - name: "id"
+        in: "path"
+        required: true
+        type: "string"
+      responses:
+        "200":
+          description: "200 response"
+          schema:
+            $ref: "#/definitions/ProjecOrion4OFPhxQ8p63G"
+      security:
+      - ProjectOrionCdkStackOutfitOrbitAPIAuthorizerF4DB5AD3: []
+    put:
+      operationId: "likePost"
+      parameters:
+      - name: "user-id"
+        in: "query"
+        required: true
+        type: "string"
+      - name: "id"
+        in: "path"
+        required: true
+        type: "string"
+      responses:
+        "200":
+          description: "200 response"
+      security:
+      - ProjectOrionCdkStackOutfitOrbitAPIAuthorizerF4DB5AD3: []
+    delete:
+      operationId: "unlikePost"
+      parameters:
+      - name: "user-id"
+        in: "query"
+        required: true
+        type: "string"
+      - name: "id"
+        in: "path"
+        required: true
+        type: "string"
+      responses:
+        "200":
+          description: "200 response"
+      security:
+      - ProjectOrionCdkStackOutfitOrbitAPIAuthorizerF4DB5AD3: []
+  /posts/{id}/saves:
+    get:
+      operationId: "getPostSaveStatus"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "user-id"
+        in: "query"
+        required: true
+        type: "string"
+      - name: "id"
+        in: "path"
+        required: true
+        type: "string"
+      responses:
+        "200":
+          description: "200 response"
+          schema:
+            $ref: "#/definitions/ProjecOrion4OFPhxQ8p63G"
+      security:
+      - ProjectOrionCdkStackOutfitOrbitAPIAuthorizerF4DB5AD3: []
+    put:
+      operationId: "savePost"
+      parameters:
+      - name: "user-id"
+        in: "query"
+        required: true
+        type: "string"
+      - name: "id"
+        in: "path"
+        required: true
+        type: "string"
+      responses:
+        "200":
+          description: "200 response"
+      security:
+      - ProjectOrionCdkStackOutfitOrbitAPIAuthorizerF4DB5AD3: []
+    delete:
+      operationId: "unsavePost"
+      parameters:
+      - name: "user-id"
+        in: "query"
+        required: true
+        type: "string"
+      - name: "id"
+        in: "path"
+        required: true
+        type: "string"
+      responses:
+        "200":
+          description: "200 response"
+      security:
+      - ProjectOrionCdkStackOutfitOrbitAPIAuthorizerF4DB5AD3: []
+  /products:
+    post:
+      operationId: "createProduct"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+      - in: "body"
+        name: "ProjecOrionDbVn1OhiMGwI"
+        required: true
+        schema:
+          $ref: "#/definitions/ProjecOrionDbVn1OhiMGwI"
+      responses:
+        "200":
+          description: "200 response"
+          schema:
+            $ref: "#/definitions/ProjecOrionvjV1HG1a47Sb"
+      security:
+      - ProjectOrionCdkStackOutfitOrbitAPIAuthorizerF4DB5AD3: []
+  /products/{id}:
+    get:
+      operationId: "getProduct"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "id"
+        in: "path"
+        required: true
+        type: "string"
+      responses:
+        "200":
+          description: "200 response"
+          schema:
+            $ref: "#/definitions/ProjecOrionGJdmGN8zCCbU"
+      security:
+      - ProjectOrionCdkStackOutfitOrbitAPIAuthorizerF4DB5AD3: []
+    delete:
+      operationId: "deleteProduct"
+      parameters:
+      - name: "id"
+        in: "path"
+        required: true
+        type: "string"
+      responses:
+        "200":
+          description: "200 response"
+      security:
+      - ProjectOrionCdkStackOutfitOrbitAPIAuthorizerF4DB5AD3: []
+    patch:
+      operationId: "updateProduct"
+      consumes:
+      - "application/json"
+      parameters:
+      - name: "id"
+        in: "path"
+        required: true
+        type: "string"
+      - in: "body"
+        name: "ProjecOrioniuceBUgeOSdt"
+        required: true
+        schema:
+          $ref: "#/definitions/ProjecOrioniuceBUgeOSdt"
+      responses:
+        "200":
+          description: "200 response"
+      security:
+      - ProjectOrionCdkStackOutfitOrbitAPIAuthorizerF4DB5AD3: []
+  /products/{id}/variant:
+    get:
+      operationId: "getProductVariant"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "id"
+        in: "path"
+        required: true
+        type: "string"
+      responses:
+        "200":
+          description: "200 response"
+          schema:
+            $ref: "#/definitions/ProjecOriongAtrBsM1zWZR"
+      security:
+      - ProjectOrionCdkStackOutfitOrbitAPIAuthorizerF4DB5AD3: []
+    patch:
+      operationId: "updateProductVariant"
+      consumes:
+      - "application/json"
+      parameters:
+      - name: "id"
+        in: "path"
+        required: true
+        type: "string"
+      - in: "body"
+        name: "ProjecOrionVzSELsAt5Kuf"
+        required: true
+        schema:
+          $ref: "#/definitions/ProjecOrionVzSELsAt5Kuf"
+      responses:
+        "200":
+          description: "200 response"
+      security:
+      - ProjectOrionCdkStackOutfitOrbitAPIAuthorizerF4DB5AD3: []
+  /returns:
+    post:
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+      - in: "body"
+        name: "ProjecOrionbxRu7lW1o9Kj"
+        required: true
+        schema:
+          $ref: "#/definitions/ProjecOrionbxRu7lW1o9Kj"
+      responses:
+        "200":
+          description: "200 response"
+          schema:
+            $ref: "#/definitions/ProjecOrion3gQGZMp6BYLw"
+      security:
+      - ProjectOrionCdkStackOutfitOrbitAPIAuthorizerF4DB5AD3: []
+  /returns/{id}:
+    get:
+      produces:
+      - "application/json"
+      parameters:
+      - name: "id"
+        in: "path"
+        required: true
+        type: "string"
+      responses:
+        "200":
+          description: "200 response"
+          schema:
+            $ref: "#/definitions/ProjecOrionA8wmmcPnTZyq"
+      security:
+      - ProjectOrionCdkStackOutfitOrbitAPIAuthorizerF4DB5AD3: []
+    delete:
+      parameters:
+      - name: "id"
+        in: "path"
+        required: true
+        type: "string"
+      responses:
+        "200":
+          description: "200 response"
+      security:
+      - ProjectOrionCdkStackOutfitOrbitAPIAuthorizerF4DB5AD3: []
   /search:
     get:
-      summary: "search posts / topics / products / users"
+      produces:
+      - "application/json"
       parameters:
-        - in: query
-          name: search-text
-          schema:
-            type: string
-        - in: query
-          name: search-type
-          schema:
-            type: string
-            enum:
-              - posts
-              - topics
-              - products
-              - users
+      - name: "search-type"
+        in: "query"
+        required: true
+        type: "string"
+      - name: "search-text"
+        in: "query"
+        required: true
+        type: "string"
       responses:
-        200:
-          description: "OK"
-          content:
-            application/json:
-              schema:
-                oneOf:
-                  - type: array
-                    items:
-                      $ref: "./components/postTile.yaml"
-                  - type: array
-                    items:
-                      $ref: "./components/user.yaml"
-                  - type: array
-                    items:
-                      $ref: "./components/productGeneral.yaml"
-
-  /carts:
-    $ref: "./carts.yaml#/paths/~1carts"
-  /carts/add:
-    $ref: "./carts.yaml#/paths/~1carts~1add"
-  /carts/delete:
-    $ref: "./carts.yaml#/paths/~1carts~1delete"
-  /carts/edit:
-    $ref: "./carts.yaml#/paths/~1carts~1edit"
-
-  /posts:
-    $ref: "./posts.yaml#/paths/~1posts"
-  /posts/{id}:
-    $ref: "./posts.yaml#/paths/~1posts~1{id}"
-  /posts/{id}/likes:
-    $ref: "./posts.yaml#/paths/~1posts~1{id}~1likes"
-  /posts/{id}/comments:
-    $ref: "./posts.yaml#/paths/~1posts~1{id}~1comments"
-  /posts/{id}/saves:
-    $ref: "./posts.yaml#/paths/~1posts~1{id}~1saves"
-
-  /products:
-    $ref: "./products.yaml#/paths/~1products"
-  /products/{id}:
-    $ref: "./products.yaml#/paths/~1products~1{id}"
-  /products/{id}/variant:
-    $ref: "./products.yaml#/paths/~1products~1{id}~1variant"
-
+        "200":
+          description: "200 response"
+          schema:
+            $ref: "#/definitions/ProjecOrionDpRTDzpHbtap"
+      security:
+      - ProjectOrionCdkStackOutfitOrbitAPIAuthorizerF4DB5AD3: []
+  /search/history:
+    get:
+      produces:
+      - "application/json"
+      parameters:
+      - name: "user-id"
+        in: "query"
+        required: true
+        type: "string"
+      responses:
+        "200":
+          description: "200 response"
+          schema:
+            $ref: "#/definitions/ProjecOrionJ2QklU9CFCdO"
+      security:
+      - ProjectOrionCdkStackOutfitOrbitAPIAuthorizerF4DB5AD3: []
+  /search/hot:
+    get:
+      produces:
+      - "application/json"
+      responses:
+        "200":
+          description: "200 response"
+          schema:
+            $ref: "#/definitions/ProjecOrionJ2QklU9CFCdO"
+      security:
+      - ProjectOrionCdkStackOutfitOrbitAPIAuthorizerF4DB5AD3: []
   /topics:
-    $ref: "./topics.yaml#/paths/~1topics"
+    post:
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+      - in: "body"
+        name: "ProjecOrion4TaVMY8sWonq"
+        required: true
+        schema:
+          $ref: "#/definitions/ProjecOrion4TaVMY8sWonq"
+      responses:
+        "200":
+          description: "200 response"
+          schema:
+            $ref: "#/definitions/ProjecOriontrT7EDUVP0Z2"
+      security:
+      - ProjectOrionCdkStackOutfitOrbitAPIAuthorizerF4DB5AD3: []
   /topics/{id}:
-    $ref: "./topics.yaml#/paths/~1topics~1{id}"
-
+    get:
+      produces:
+      - "application/json"
+      parameters:
+      - name: "id"
+        in: "path"
+        required: true
+        type: "string"
+      responses:
+        "200":
+          description: "200 response"
+          schema:
+            $ref: "#/definitions/ProjecOrionGX34W43imlTi"
+      security:
+      - ProjectOrionCdkStackOutfitOrbitAPIAuthorizerF4DB5AD3: []
+    put:
+      consumes:
+      - "application/json"
+      parameters:
+      - name: "id"
+        in: "path"
+        required: true
+        type: "string"
+      - in: "body"
+        name: "ProjecOrionTiCU5xlt853V"
+        required: true
+        schema:
+          $ref: "#/definitions/ProjecOrionTiCU5xlt853V"
+      responses:
+        "200":
+          description: "200 response"
+      security:
+      - ProjectOrionCdkStackOutfitOrbitAPIAuthorizerF4DB5AD3: []
   /users/{id}:
-    $ref: "./users.yaml#/paths/~1users~1{id}"
-  /users/{id}/following-num:
-    $ref: "./users.yaml#/paths/~1users~1{id}~1following-num"
-  /users/{id}/followers-num:
-    $ref: "./users.yaml#/paths/~1users~1{id}~1followers-num"
-  /users/{id}/following:
-    $ref: "./users.yaml#/paths/~1users~1{id}~1following"
-  /users/{id}/followers:
-    $ref: "./users.yaml#/paths/~1users~1{id}~1followers"
-  /users/{id}/posts:
-    $ref: "./users.yaml#/paths/~1users~1{id}~1posts"
+    get:
+      produces:
+      - "application/json"
+      parameters:
+      - name: "id"
+        in: "path"
+        required: true
+        type: "string"
+      responses:
+        "200":
+          description: "200 response"
+          schema:
+            $ref: "#/definitions/ProjecOrion99ZkNhQXH8Y3"
+      security:
+      - ProjectOrionCdkStackOutfitOrbitAPIAuthorizerF4DB5AD3: []
+    patch:
+      consumes:
+      - "application/json"
+      parameters:
+      - name: "id"
+        in: "path"
+        required: true
+        type: "string"
+      - in: "body"
+        name: "ProjecOrion0fzCUps4SflW"
+        required: true
+        schema:
+          $ref: "#/definitions/ProjecOrion0fzCUps4SflW"
+      responses:
+        "200":
+          description: "200 response"
+      security:
+      - ProjectOrionCdkStackOutfitOrbitAPIAuthorizerF4DB5AD3: []
   /users/{id}/favorites:
-    $ref: "./users.yaml#/paths/~1users~1{id}~1favorites"
-  /users/{id}/likes:
-    $ref: "./users.yaml#/paths/~1users~1{id}~1likes"
-  /users/{id}/view-history:
-    $ref: "./users.yaml#/paths/~1users~1{id}~1view-history"
-  /users/{id}/products:
-    $ref: "./users.yaml#/paths/~1users~1{id}~1products"
+    get:
+      produces:
+      - "application/json"
+      parameters:
+      - name: "id"
+        in: "path"
+        required: true
+        type: "string"
+      responses:
+        "200":
+          description: "200 response"
+          schema:
+            $ref: "#/definitions/ProjecOrionGDJLw5loSkZH"
+      security:
+      - ProjectOrionCdkStackOutfitOrbitAPIAuthorizerF4DB5AD3: []
+  /users/{id}/followers:
+    get:
+      produces:
+      - "application/json"
+      parameters:
+      - name: "id"
+        in: "path"
+        required: true
+        type: "string"
+      responses:
+        "200":
+          description: "200 response"
+          schema:
+            $ref: "#/definitions/ProjecOrion6V6BsyoLBUtm"
+      security:
+      - ProjectOrionCdkStackOutfitOrbitAPIAuthorizerF4DB5AD3: []
+  /users/{id}/followers-num:
+    get:
+      produces:
+      - "application/json"
+      parameters:
+      - name: "id"
+        in: "path"
+        required: true
+        type: "string"
+      responses:
+        "200":
+          description: "200 response"
+          schema:
+            $ref: "#/definitions/ProjecOrionjXDt7YPSd9l9"
+      security:
+      - ProjectOrionCdkStackOutfitOrbitAPIAuthorizerF4DB5AD3: []
+  /users/{id}/following:
+    get:
+      produces:
+      - "application/json"
+      parameters:
+      - name: "id"
+        in: "path"
+        required: true
+        type: "string"
+      responses:
+        "200":
+          description: "200 response"
+          schema:
+            $ref: "#/definitions/ProjecOrionGQH7156WIkua"
+      security:
+      - ProjectOrionCdkStackOutfitOrbitAPIAuthorizerF4DB5AD3: []
+  /users/{id}/following-num:
+    get:
+      produces:
+      - "application/json"
+      parameters:
+      - name: "id"
+        in: "path"
+        required: true
+        type: "string"
+      responses:
+        "200":
+          description: "200 response"
+          schema:
+            $ref: "#/definitions/ProjecOrionjXDt7YPSd9l9"
+      security:
+      - ProjectOrionCdkStackOutfitOrbitAPIAuthorizerF4DB5AD3: []
   /users/{id}/follows:
-    $ref: "./users.yaml#/paths/~1users~1{id}~1follows"
+    get:
+      produces:
+      - "application/json"
+      parameters:
+      - name: "current_user_id"
+        in: "query"
+        required: true
+        type: "string"
+      - name: "id"
+        in: "path"
+        required: true
+        type: "string"
+      responses:
+        "200":
+          description: "200 response"
+          schema:
+            $ref: "#/definitions/ProjecOrionfHrfODSm3cFo"
+      security:
+      - ProjectOrionCdkStackOutfitOrbitAPIAuthorizerF4DB5AD3: []
+    put:
+      consumes:
+      - "application/json"
+      parameters:
+      - name: "id"
+        in: "path"
+        required: true
+        type: "string"
+      - in: "body"
+        name: "ProjecOrionWAHfdHqHYFvu"
+        required: true
+        schema:
+          $ref: "#/definitions/ProjecOrionWAHfdHqHYFvu"
+      responses:
+        "200":
+          description: "200 response"
+      security:
+      - ProjectOrionCdkStackOutfitOrbitAPIAuthorizerF4DB5AD3: []
+    delete:
+      consumes:
+      - "application/json"
+      parameters:
+      - name: "id"
+        in: "path"
+        required: true
+        type: "string"
+      - in: "body"
+        name: "ProjecOrionWAHfdHqHYFvu"
+        required: true
+        schema:
+          $ref: "#/definitions/ProjecOrionWAHfdHqHYFvu"
+      responses:
+        "200":
+          description: "200 response"
+      security:
+      - ProjectOrionCdkStackOutfitOrbitAPIAuthorizerF4DB5AD3: []
+  /users/{id}/likes:
+    get:
+      produces:
+      - "application/json"
+      parameters:
+      - name: "id"
+        in: "path"
+        required: true
+        type: "string"
+      responses:
+        "200":
+          description: "200 response"
+          schema:
+            $ref: "#/definitions/ProjecOrionGDJLw5loSkZH"
+      security:
+      - ProjectOrionCdkStackOutfitOrbitAPIAuthorizerF4DB5AD3: []
+  /users/{id}/posts:
+    get:
+      produces:
+      - "application/json"
+      parameters:
+      - name: "id"
+        in: "path"
+        required: true
+        type: "string"
+      responses:
+        "200":
+          description: "200 response"
+          schema:
+            $ref: "#/definitions/ProjecOrionGDJLw5loSkZH"
+      security:
+      - ProjectOrionCdkStackOutfitOrbitAPIAuthorizerF4DB5AD3: []
+  /users/{id}/products:
+    get:
+      produces:
+      - "application/json"
+      parameters:
+      - name: "id"
+        in: "path"
+        required: true
+        type: "string"
+      responses:
+        "200":
+          description: "200 response"
+          schema:
+            $ref: "#/definitions/ProjecOrionv3rz8uRZFKkX"
+      security:
+      - ProjectOrionCdkStackOutfitOrbitAPIAuthorizerF4DB5AD3: []
   /users/{id}/recently-visited:
-    $ref: "./users.yaml#/paths/~1users~1{id}~1recently-visited"
-  /orders:
-    $ref: "./orders.yaml#/paths/~1orders"
-  /orders/{id}:
-    $ref: "./orders.yaml#/paths/~1orders~1{id}"
-  /orders/{id}/status:
-    $ref: "./orders.yaml#/paths/~1orders~1{id}~1status"
-  /myshop/{id}/orders:
-    $ref: "./shopAdmin.yaml#/paths/~1myshop~1{id}~1orders"
-  /myshop/{id}/orders/fulfilled:
-    $ref: "./shopAdmin.yaml#/paths/~1myshop~1{id}~1orders~1fulfilled"
-  /myshop/{id}/orders/unfulfilled:
-    $ref: "./shopAdmin.yaml#/paths/~1myshop~1{id}~1orders~1unfulfilled"
-  /myshop/{id}/orders/return:
-    $ref: "./shopAdmin.yaml#/paths/~1myshop~1{id}~1orders~1return"
-  /myshop/{id}/product:
-    $ref: "./shopAdmin.yaml#/paths/~1myshop~1{id}~1products"
-  /myshop/{id}/analytics:
-    $ref: "./shopAdmin.yaml#/paths/~1myshop~1{id}~1analytics"
+    get:
+      produces:
+      - "application/json"
+      parameters:
+      - name: "id"
+        in: "path"
+        required: true
+        type: "string"
+      responses:
+        "200":
+          description: "200 response"
+          schema:
+            $ref: "#/definitions/ProjecOrionWnVoraFfrbG5"
+      security:
+      - ProjectOrionCdkStackOutfitOrbitAPIAuthorizerF4DB5AD3: []
+    delete:
+      parameters:
+      - name: "id"
+        in: "path"
+        required: true
+        type: "string"
+      responses:
+        "200":
+          description: "200 response"
+      security:
+      - ProjectOrionCdkStackOutfitOrbitAPIAuthorizerF4DB5AD3: []
+  /users/{id}/view-history:
+    get:
+      produces:
+      - "application/json"
+      parameters:
+      - name: "id"
+        in: "path"
+        required: true
+        type: "string"
+      responses:
+        "200":
+          description: "200 response"
+          schema:
+            $ref: "#/definitions/ProjecOrionGDJLw5loSkZH"
+      security:
+      - ProjectOrionCdkStackOutfitOrbitAPIAuthorizerF4DB5AD3: []
+securityDefinitions:
+  ProjectOrionCdkStackOutfitOrbitAPIAuthorizerF4DB5AD3:
+    type: "apiKey"
+    name: "Authorization"
+    in: "header"
+    x-amazon-apigateway-authtype: "cognito_user_pools"
+definitions:
+  ProjecOrionGDJLw5loSkZH:
+    type: "object"
+    properties:
+      post_tiles:
+        $ref: "#/definitions/ProjecOrionKwkJ8eAFjrWE"
+    title: "userPostsResponseModel"
+  ProjecOrioniuceBUgeOSdt:
+    type: "object"
+    properties:
+      sizing_guide:
+        type: "string"
+      options:
+        type: "array"
+        items:
+          type: "object"
+          properties:
+            values:
+              type: "array"
+              items:
+                type: "string"
+            name:
+              type: "string"
+      details:
+        type: "string"
+      media:
+        type: "array"
+        items:
+          type: "string"
+      title:
+        type: "string"
+      status:
+        type: "boolean"
+    title: "productGeneralUpdate"
+  ProjecOrionKTNF2MslNpW1:
+    title: "myShopOrdersResponseModel"
+    type: "array"
+    items:
+      $ref: "#/definitions/ProjecOrionUNoREaCnwqw6"
+  ProjecOrionySM1FOwiLB2H:
+    type: "object"
+    properties:
+      count:
+        type: "integer"
+      customer_id:
+        type: "string"
+      locale:
+        type: "string"
+    title: "recommendationRequest"
+  ProjecOrionkjVpJjula8BF:
+    type: "object"
+    properties:
+      status:
+        type: "string"
+        enum:
+        - "placed"
+        - "cancelled"
+        - "shipped"
+        - "delivered"
+        - "refunded"
+        - "returned"
+    title: "orderStatus"
+  ProjecOrion99ZkNhQXH8Y3:
+    $ref: "#/definitions/ProjecOrionN6LHLTuiglK9"
+  ProjecOrionkxKb1sE7q3gz:
+    title: "myShopProductResponseModel"
+    type: "array"
+    items:
+      $ref: "#/definitions/ProjecOriongAtrBsM1zWZR"
+  ProjecOrionVzSELsAt5Kuf:
+    type: "object"
+    properties:
+      price:
+        type: "string"
+      media:
+        type: "array"
+        items:
+          type: "string"
+      stock:
+        type: "integer"
+      status:
+        type: "boolean"
+    title: "productVariantUpdate"
+  ProjecOrionR68vG6ODXBq7:
+    title: "userProducts"
+    type: "array"
+    items:
+      $ref: "#/definitions/ProjecOrioniMcVGyXMjUsU"
+  ProjecOrion0JSCIqSZptS5:
+    type: "object"
+    properties:
+      unfulfilled_orders:
+        type: "integer"
+      fulfilled_orders:
+        type: "integer"
+      revenue_today:
+        type: "integer"
+      orders_today:
+        type: "integer"
+      active_products:
+        type: "integer"
+      returned_orders:
+        type: "integer"
+      total_revenue:
+        type: "integer"
+      orders_this_month:
+        type: "integer"
+      revenue_this_month:
+        type: "integer"
+      inactive_products:
+        type: "integer"
+      total_orders:
+        type: "integer"
+      total_products:
+        type: "integer"
+    title: "analytics"
+  ProjecOrionN6LHLTuiglK9:
+    title: "user"
+    allOf:
+    - $ref: "#/definitions/ProjecOrion0fzCUps4SflW"
+    - type: "object"
+      properties:
+        id:
+          type: "string"
+        avatar:
+          type: "string"
+  ProjecOrionWAHfdHqHYFvu:
+    type: "object"
+    properties:
+      current_user_id:
+        type: "string"
+    title: "followUserRequest"
+  ProjecOrionWnVoraFfrbG5:
+    type: "object"
+    properties:
+      topics:
+        $ref: "#/definitions/ProjecOrion5SlAtTdBptEo"
+    title: "recentlyVisitedResponseModel"
+  ProjecOrionwuqjzhHJOLWH:
+    type: "object"
+    properties:
+      raw_price_tax_rate:
+        type: "number"
+      shipping_tax_rate:
+        type: "number"
+    title: "taxDetail"
+  ProjecOrionDbVn1OhiMGwI:
+    type: "object"
+    properties:
+      user_id:
+        type: "string"
+      sizing_guide:
+        type: "string"
+      details:
+        type: "string"
+      media:
+        type: "array"
+        items:
+          type: "string"
+      option_names:
+        type: "array"
+        items:
+          type: "string"
+      variants:
+        $ref: "#/definitions/ProjecOrionS1XLO8ayKtki"
+      title:
+        type: "string"
+    title: "newProductInfo"
+  ProjecOrion4TaVMY8sWonq:
+    type: "object"
+    properties:
+      topic_name:
+        type: "string"
+    title: "postTopicsRequestModel"
+  ProjecOrionbxRu7lW1o9Kj:
+    type: "object"
+    properties:
+      reason:
+        type: "string"
+      count:
+        type: "number"
+      product_variant_id:
+        type: "string"
+      order_id:
+        type: "string"
+    title: "postReturnRequestModel"
+  ProjecOrionKwkJ8eAFjrWE:
+    title: "postTiles"
+    type: "array"
+    items:
+      $ref: "#/definitions/ProjecOriongo3PZzVBW4hS"
+  ProjecOrionRL7yvvEYSzIF:
+    type: "object"
+    properties:
+      cart_line_items:
+        type: "array"
+        items:
+          $ref: "#/definitions/ProjecOrionLUww0G3A2GZt"
+      billing_address:
+        type: "string"
+      shipping_address:
+        type: "string"
+      shipment_policy:
+        type: "string"
+    title: "postOrdersRequestModel"
+  ProjecOrionRn3fyDmfe8kg:
+    type: "string"
+    title: "postOrdersResponseModel"
+  ProjecOrion1ydcEV9zajw3:
+    type: "object"
+    properties:
+      variant_id:
+        type: "string"
+      product_id:
+        type: "string"
+    title: "deleteCartsRequestModel"
+  ProjecOrionkOVPaQykjTGD:
+    type: "object"
+    properties:
+      author_name:
+        type: "string"
+      comment_num:
+        type: "integer"
+      like_num:
+        type: "integer"
+      comments:
+        type: "array"
+        items:
+          $ref: "#/definitions/ProjecOrionBX6y35ot4KcV"
+      avatar:
+        type: "string"
+      title:
+        type: "string"
+      multi_media:
+        $ref: "#/definitions/ProjecOrion6VyXJA8UCzbT"
+      products:
+        type: "array"
+        items:
+          $ref: "#/definitions/ProjecOriongAtrBsM1zWZR"
+      id:
+        type: "string"
+      text:
+        type: "string"
+      time:
+        type: "string"
+      author_id:
+        type: "string"
+      save_num:
+        type: "integer"
+    title: "post"
+  ProjecOrionSf2D7g14tyFA:
+    type: "object"
+    properties:
+      thumbnail:
+        type: "string"
+      price:
+        type: "string"
+      count:
+        type: "integer"
+      product_variant_name:
+        type: "string"
+      merchant_name:
+        type: "string"
+      merchant_id:
+        type: "string"
+      product_variant_id:
+        type: "string"
+      product_title:
+        type: "string"
+    title: "orderLineItem"
+  ProjecOrionS1XLO8ayKtki:
+    title: "variants"
+    type: "array"
+    items:
+      type: "object"
+      properties:
+        price:
+          type: "string"
+        option_values:
+          type: "array"
+          items:
+            type: "string"
+        media:
+          type: "array"
+          items:
+            type: "string"
+        stock:
+          type: "string"
+  ProjecOrionlXSapW4ZD2bl:
+    type: "object"
+    properties:
+      variant_id:
+        type: "string"
+      product_id:
+        type: "string"
+      count:
+        type: "integer"
+    title: "cartsRequestModel"
+  ProjecOrionHdP868EPJc2B:
+    type: "object"
+    properties:
+      media:
+        type: "string"
+      tags:
+        type: "array"
+        items:
+          type: "object"
+          properties:
+            pos_y:
+              type: "number"
+            pos_x:
+              type: "number"
+            name:
+              type: "string"
+            tag_url:
+              type: "string"
+    title: "taggedPostImage"
+  ProjecOrion4OFPhxQ8p63G:
+    type: "object"
+    properties:
+      status:
+        type: "boolean"
+    title: "booleanStatus"
+  ProjecOrionD7oFdS8gxxUM:
+    title: "followAccounts"
+    type: "array"
+    items:
+      $ref: "#/definitions/ProjecOrion1YF7zXSJpc6y"
+  ProjecOrionl4bHMhoesc0B:
+    type: "object"
+    properties:
+      product_variant_ids:
+        type: "array"
+        items:
+          type: "string"
+      thumbnail:
+        type: "string"
+      text:
+        type: "string"
+      title:
+        type: "string"
+      multi_media:
+        $ref: "#/definitions/ProjecOrion6VyXJA8UCzbT"
+    title: "updatePostRequest"
+  ProjecOrionfHrfODSm3cFo:
+    type: "object"
+    properties:
+      status:
+        type: "boolean"
+    title: "followStatus"
+  ProjecOrionLUww0G3A2GZt:
+    type: "object"
+    properties:
+      thumbnail:
+        type: "string"
+      price:
+        type: "string"
+      count:
+        type: "integer"
+      product_variant_name:
+        type: "string"
+      merchant_name:
+        type: "string"
+      merchant_id:
+        type: "string"
+      product_variant_id:
+        type: "string"
+      product_title:
+        type: "string"
+    title: "cartLineItem"
+  ProjecOriontrT7EDUVP0Z2:
+    type: "object"
+    properties:
+      topic_id:
+        type: "string"
+    title: "postTopicsResponseModel"
+  ProjecOrion1YF7zXSJpc6y:
+    type: "object"
+    properties:
+      user_id:
+        type: "string"
+      followers_num:
+        type: "number"
+      user_name:
+        type: "string"
+      avatar:
+        type: "string"
+    title: "followAccount"
+  ProjecOrionvjV1HG1a47Sb:
+    type: "string"
+    title: "productID"
+  ProjecOrionA8wmmcPnTZyq:
+    type: "object"
+    properties:
+      reason:
+        type: "string"
+      payment_id:
+        type: "string"
+      count:
+        type: "integer"
+      refund_amount:
+        type: "string"
+      billing_address:
+        type: "string"
+      id:
+        type: "string"
+      shipping_address:
+        type: "string"
+      time:
+        type: "string"
+      product_variant_id:
+        type: "string"
+      order_id:
+        type: "string"
+      status:
+        type: "string"
+        enum:
+        - "pending"
+        - "cancelled"
+        - "rejected"
+        - "refunded"
+    title: "returnOrder"
+  ProjecOrionf3nIu6yMHd3X:
+    type: "object"
+    properties:
+      post_tiles:
+        $ref: "#/definitions/ProjecOrionKwkJ8eAFjrWE"
+    title: "recommendationResponse"
+  ProjecOrion0fzCUps4SflW:
+    type: "object"
+    properties:
+      birthday:
+        type: "string"
+      gender:
+        type: "string"
+        enum:
+        - "Male"
+        - "Female"
+        - "Other"
+      phone:
+        type: "string"
+      user_name:
+        type: "string"
+      bio:
+        type: "string"
+      avatar:
+        type: "string"
+      email:
+        type: "string"
+    title: "userUpdate"
+  ProjecOrionGX34W43imlTi:
+    title: "getTopicsResponseModel"
+    type: "array"
+    items:
+      $ref: "#/definitions/ProjecOriongo3PZzVBW4hS"
+  ProjecOrion3gQGZMp6BYLw:
+    type: "object"
+    properties:
+      return_id:
+        type: "string"
+    title: "postReturnResponseModel"
+  ProjecOrionjXDt7YPSd9l9:
+    type: "object"
+    properties:
+      num:
+        type: "number"
+    title: "followNumResponseModel"
+  ProjecOrion2dUkRbSFHlLG:
+    type: "object"
+    properties:
+      topic_name:
+        type: "string"
+      topic_id:
+        type: "string"
+    title: "followStatus"
+  ProjecOrionUNoREaCnwqw6:
+    type: "object"
+    properties:
+      order_status:
+        $ref: "#/definitions/ProjecOrionkjVpJjula8BF"
+      shipment_charge:
+        type: "number"
+      tax_detail:
+        $ref: "#/definitions/ProjecOrionwuqjzhHJOLWH"
+      billing_address:
+        type: "string"
+      id:
+        type: "string"
+      line_items:
+        type: "array"
+        items:
+          $ref: "#/definitions/ProjecOrionSf2D7g14tyFA"
+      shipping_address:
+        type: "string"
+      time:
+        type: "string"
+      shipment_tracking_number:
+        type: "string"
+      raw_price:
+        type: "string"
+      shipment_policy:
+        type: "string"
+    title: "order"
+  ProjecOrionGJdmGN8zCCbU:
+    title: "productGeneral"
+    allOf:
+    - $ref: "#/definitions/ProjecOrioniuceBUgeOSdt"
+    - type: "object"
+      properties:
+        id:
+          type: "string"
+        related_posts:
+          $ref: "#/definitions/ProjecOrionKwkJ8eAFjrWE"
+  ProjecOriongAtrBsM1zWZR:
+    title: "productVariant"
+    allOf:
+    - $ref: "#/definitions/ProjecOrionVzSELsAt5Kuf"
+    - type: "object"
+      properties:
+        product_id:
+          type: "string"
+        id:
+          type: "string"
+  ProjecOrionv3rz8uRZFKkX:
+    type: "object"
+    properties:
+      products:
+        $ref: "#/definitions/ProjecOrionR68vG6ODXBq7"
+    title: "userProductsResponseModel"
+  ProjecOrion0tXfA8EhFdEA:
+    type: "object"
+    properties:
+      user_id:
+        type: "string"
+      text:
+        type: "string"
+    title: "createCommentRequest"
+  ProjecOrionvsGe1x7NN7Lc:
+    type: "object"
+    properties:
+      text:
+        type: "string"
+    title: "updateCommentRequest"
+  ProjecOrionQTqh0FQ1u7wB:
+    title: "shoppingCart"
+    type: "array"
+    items:
+      $ref: "#/definitions/ProjecOrionLUww0G3A2GZt"
+  ProjecOrion6VyXJA8UCzbT:
+    type: "object"
+    properties:
+      post_type:
+        type: "string"
+        enum:
+        - "pic"
+        - "vid"
+      video:
+        type: "string"
+      tagged_post_image:
+        type: "array"
+        items:
+          $ref: "#/definitions/ProjecOrionHdP868EPJc2B"
+    title: "multiMedia"
+  ProjecOrionTiCU5xlt853V:
+    type: "object"
+    title: "putTopicsRequestModel"
+  ProjecOriongo3PZzVBW4hS:
+    type: "object"
+    properties:
+      like_num:
+        type: "string"
+      thumbnail:
+        type: "string"
+      post_id:
+        type: "string"
+      user_id:
+        type: "string"
+      user_name:
+        type: "string"
+      post_type:
+        type: "string"
+        enum:
+        - "pic"
+        - "vid"
+      avatar:
+        type: "string"
+      title:
+        type: "string"
+    title: "postTile"
+  ProjecOrioniMcVGyXMjUsU:
+    type: "object"
+    properties:
+      thumbnail:
+        type: "string"
+      price:
+        type: "string"
+      product_id:
+        type: "string"
+      title:
+        type: "string"
+    title: "userProduct"
+  ProjecOrionBX6y35ot4KcV:
+    type: "object"
+    properties:
+      author_name:
+        type: "string"
+      like_num:
+        type: "integer"
+      responses:
+        type: "array"
+        items:
+          type: "string"
+          title: "commentId"
+      id:
+        type: "string"
+      avatar:
+        type: "string"
+      time:
+        type: "string"
+      text:
+        type: "string"
+      author_id:
+        type: "string"
+    title: "comment"
+  ProjecOrion1qNXYAJy1ou9:
+    type: "object"
+    required:
+    - "author_id"
+    - "multi_media"
+    - "product_variant_ids"
+    - "text"
+    - "thumbnail"
+    - "title"
+    properties:
+      product_variant_ids:
+        type: "array"
+        items:
+          type: "string"
+      thumbnail:
+        type: "string"
+      text:
+        type: "string"
+      author_id:
+        type: "string"
+      title:
+        type: "string"
+      multi_media:
+        $ref: "#/definitions/ProjecOrion6VyXJA8UCzbT"
+    title: "createPostRequest"
+  ProjecOrionDpRTDzpHbtap:
+    title: "postReturnResponseModel"
+  ProjecOrionGQH7156WIkua:
+    type: "object"
+    properties:
+      following_acc:
+        $ref: "#/definitions/ProjecOrionD7oFdS8gxxUM"
+    title: "followingResponseModel"
+  ProjecOrion6V6BsyoLBUtm:
+    type: "object"
+    properties:
+      follower_acc:
+        $ref: "#/definitions/ProjecOrionD7oFdS8gxxUM"
+    title: "followersResponseModel"
+  ProjecOrionJ2QklU9CFCdO:
+    title: "searchSuggestionsModel"
+    type: "array"
+    items:
+      type: "string"
+      title: "searchSuggestion"
+  ProjecOrion5SlAtTdBptEo:
+    title: "followStatus"
+    type: "array"
+    items:
+      $ref: "#/definitions/ProjecOrion2dUkRbSFHlLG"
+  ProjecOrionGVCZ95xETAtJ:
+    type: "string"
+    title: "ID"

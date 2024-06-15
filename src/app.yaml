@@ -1,7 +1,7 @@
 ---
 swagger: "2.0"
 info:
-  version: "2024-05-19T17:46:47Z"
+  version: "2024-06-15T23:18:52Z"
   title: "OrionApi"
 host: "outfitorbits.com"
 schemes:
@@ -1227,13 +1227,20 @@ definitions:
         type: "string"
       sizing_guide:
         type: "string"
+      options:
+        type: "array"
+        items:
+          type: "object"
+          properties:
+            values:
+              type: "array"
+              items:
+                type: "string"
+            name:
+              type: "string"
       details:
         type: "string"
       media:
-        type: "array"
-        items:
-          type: "string"
-      option_names:
         type: "array"
         items:
           type: "string"
@@ -1355,7 +1362,12 @@ definitions:
         option_values:
           type: "array"
           items:
-            type: "string"
+            type: "object"
+            properties:
+              option_value:
+                type: "string"
+              option_name:
+                type: "string"
         media:
           type: "array"
           items:
@@ -1463,7 +1475,10 @@ definitions:
         type: "string"
     title: "followAccount"
   ProjecOrionvjV1HG1a47Sb:
-    type: "string"
+    type: "object"
+    properties:
+      id:
+        type: "string"
     title: "productID"
   ProjecOrionA8wmmcPnTZyq:
     type: "object"
@@ -1585,6 +1600,22 @@ definitions:
       properties:
         id:
           type: "string"
+        variants:
+          type: "array"
+          items:
+            type: "object"
+            properties:
+              variant_id:
+                type: "string"
+              option_values:
+                type: "array"
+                items:
+                  type: "object"
+                  properties:
+                    name:
+                      type: "string"
+                    value:
+                      type: "string"
         related_posts:
           $ref: "#/definitions/ProjecOrionKwkJ8eAFjrWE"
   ProjecOriongAtrBsM1zWZR:
@@ -1749,5 +1780,8 @@ definitions:
     items:
       $ref: "#/definitions/ProjecOrion2dUkRbSFHlLG"
   ProjecOrionGVCZ95xETAtJ:
-    type: "string"
+    type: "object"
+    properties:
+      id:
+        type: "string"
     title: "ID"
